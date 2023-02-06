@@ -1,0 +1,137 @@
+<form id="consultancy_details" method="post">
+  <div id="consultancy_scroolbar">
+    <div class="row_container">
+      <div class="column_container column_size_big">
+        <label class="label_1">Consultoria</label>
+        <input type="text" class="input_1" name="CONSULTORIA" required />
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Nome Comercial</label>
+        <input type="text" class="input_1" name="CS_APELIDO" required />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container">
+        <label class="label_1">Tamanho da Empresa</label>
+        <div class="select_container">
+          <select class="ConCli_select" name="CS_IDROB">
+            <option>Microempresa</option>
+            <option>Pequena empresa</option>
+            <option>Média empresa</option>
+            <option>Grande empresa</option>
+          </select>
+          <span class="square square_black"></span>
+        </div>
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_1">CNPJ</label>
+        <input type="text" class="input_1 cnpj" name="CS_CNPJ" required />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Telefone Comercial</label>
+        <input type="text" class="input_1 tel" name="CS_TELCONS" required />
+      </div>
+      <div class="column_container column_size_big">
+        <label class="label_1">Pagina Web</label>
+        <input type="text" class="input_1" name="CS_WEBPAGE" required />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Responsável pelo Contato</label>
+        <input type="text" class="input_1" name="CS_NOME" required />
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Entre em contato com o eMail</label>
+        <input type="text" class="input_1" name="CS_EMAIL" required />
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Cargo Contato</label>
+        <input type="text" class="input_1" name="CS_CARGO" required />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Telefone do contato</label>
+        <input type="text" class="input_1 tel" name="CS_TELRESP" required />
+      </div>
+      <div class="column_container column_size_big">
+        <label class="label_1">Endereço Comercial</label>
+        <input type="text" class="input_1" name="CS_END" />
+      </div>
+      <div class="column_container column_size_small">
+        <label class="label_1">Número</label>
+        <input type="text" class="input_1 num" name="CS_NUM" />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_small">
+        <label class="label_1">CEP</label>
+        <input type="text" class="input_1 cep" name="CS_CEP" />
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Bairro</label>
+        <input type="text" class="input_1" name="CS_BAIR" />
+      </div>
+      <div class="column_container column_size_big">
+        <label class="label_1">Complemento</label>
+        <input type="text" class="input_1" name="CS_CMPL" />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_big">
+        <label class="label_1">Município</label>
+        <input type="text" class="input_1" name="CS_MUNI" />
+      </div>
+      <div class="column_container column_size_small">
+        <label class="label_1">Estado</label>
+        <input type="text" class="input_1" name="CS_ESTADO" />
+      </div>
+      <div class="column_container column_size_small">
+        <label class="label_1">País</label>
+        <input type="text" class="input_1" name="CS_PAIS" />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_big">
+        <label class="label_1">Apresentação da Consultoria</label>
+        <input type="text" class="input_1" name="ARQUIVOCONS" />
+      </div>
+      <div class="column_container">
+        <label class="label_1">Apresentação é um ...</label>
+        <diV>
+          <input type="radio" name="presentation" value="1" required />
+          <label>Video</label>
+        </diV>
+        <diV>
+          <input type="radio" name="presentation" value="0" required />
+          <label>Arquivo</label>
+        </diV>
+      </div>
+
+      <div class="column_container">
+        <label class="label_1">Status</label>
+        <div>
+          <input type="radio" name="status_info" value="1" required />
+          <label>Ativo</label>
+        </div>
+        <div>
+          <input type="radio" name="status_info" value="0" required />
+          <label>Bloqueado</label>
+        </div>
+      </div>
+
+      <input type="hidden" name="id" />
+    </div>
+    <%- include("../../Templates/ACR/acr_2",{tipo:"detailsConsult"})%>
+  </div>
+</form>

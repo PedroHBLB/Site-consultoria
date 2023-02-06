@@ -1,0 +1,158 @@
+<form class="form_padraentrevista" method="post" enctype="multipart/form-data">
+  <div class="padraentrevista_top">
+    <div class="padraoentrevista_block_container">
+      <div class="row_container">
+        <div class="column_container column_size_mediun">
+          <label class="label_4">Entrada ou Saída de Dados</label>
+          <diV>
+            <input type="radio" name="FLGINOUT" value="0" required />
+            <label>Entrada de Dados</label>
+          </diV>
+          <diV>
+            <input type="radio" name="FLGINOUT" value="1" required />
+            <label>Saída de Dados</label>
+          </diV>
+        </div>
+        <div class="column_container column_size_mediun">
+          <label class="label_4">Tipo de controle</label>
+          <div class="select_container">
+            <select class="config_select" name="IDTIPOENTRADA" required>
+              <%for(var i = 0; i < entradas.length;i++){%>
+                <%if(entradas[i].ID != 11){%>
+                  <option flginout=<%=entradas[i].FLGINOUT%>>
+                      <%=entradas[i].TIPOS%>
+                  </option>
+                <%}%>
+              <%}%>
+            </select>
+            <span class="square square_blue"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row_container">
+        <div class="column_container column_size_mediun">
+          <label class="label_4">Classe</label>
+          <div class="select_container">
+            <select class="config_select" name="IDCLASS" required>
+              <%for(var i = 0; i < classes.length;i++){%>
+              <option><%=classes[i].CLASSE%></option>
+              <%}%>
+            </select>
+            <span class="square square_blue"></span>
+          </div>
+        </div>
+        <div class="column_container column_size_mediun">
+          <label class="label_4">Objetivo de Negócios</label>
+          <div class="select_container">
+            <select class="config_select" name="IDOBJ" required>
+              <%for(var i = 0; i < objetivos.length;i++){%>
+              <option><%=objetivos[i].DESCRICAO%></option>
+              <%}%>
+            </select>
+            <span class="square square_blue"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padraoentrevista_block_container">
+      <label class="label_4">Texto</label>
+      <textarea class="padraentrevista_textarea textareaTEXTO"></textarea>
+      <input type="hidden" name="TEXTO" required />
+    </div>
+  </div>
+
+  <div class="padraoentrevista_bot">
+    <div class="row_container">
+      <div class="column_container column_size_mediun">
+        <label class="label_4">Essa atividade Registra META? </label>
+        <diV>
+          <input type="radio" name="FLAGMETA" value="0" required />
+          <label>Não</label>
+        </diV>
+        <diV>
+          <input type="radio" name="FLAGMETA" value="1" required />
+          <label>Sim</label>
+        </diV>
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_4">Essa atividade Registra OBJETIVO? </label>
+        <diV>
+          <input type="radio" name="FLAGOBJETIVO" value="0" required />
+          <label>Não</label>
+        </diV>
+        <diV>
+          <input type="radio" name="FLAGOBJETIVO" value="1" required />
+          <label>Sim</label>
+        </diV>
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_4">Essa atividade Valor Corrente? </label>
+        <diV>
+          <input type="radio" name="FLAGREAL" value="0" required />
+          <label>Não</label>
+        </diV>
+        <diV>
+          <input type="radio" name="FLAGREAL" value="1" required />
+          <label>Sim</label>
+        </diV>
+      </div>
+    </div>
+    <div class="row_container">
+      <div class="column_container column_size_mediun">
+        <label class="label_4">Combo de Dados</label>
+        <div class="select_container">
+          <select class="config_select" name="COMBOSOURCE" required>
+            <%for(var i = 0; i < combos.length;i++){%>
+            <option><%=combos[i][0]%></option>
+            <%}%>
+          </select>
+          <span class="square square_blue"></span>
+        </div>
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_4">Escala</label>
+        <div class="select_container">
+          <select class="config_select" name="IDESCALA" required>
+            <%for(var i = 0; i < escalas.length;i++){%>
+            <option><%=escalas[i].DESCRICAO%></option>
+            <%}%>
+          </select>
+          <span class="square square_blue"></span>
+        </div>
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="padraentrevista_file_label" for="arquivo"
+          >Escolha o arquivo <i class="fa-solid fa-file icon_padraentrevista_file"></i
+        ></label>
+        <input type="file" name="FILENAME" id="arquivo" />
+        <label class="padraentrevista_file_show">Esperando Arquivo...</label>
+      </div>
+    </div>
+    <div class="row_container">
+      <div class="column_container column_size_mediun">
+        <label class="label_4">Sequencia</label>
+        <input type="text" class="input_2 num" name="SEQUENCIA" required />
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_4">Grupo?</label>
+        <diV>
+          <input type="radio" name="GRUPO" value="0" required />
+          <label>Não</label>
+        </diV>
+        <diV>
+          <input type="radio" name="GRUPO" value="1" required />
+          <label>Sim</label>
+        </diV>
+      </div>
+      <div class="column_container column_size_mediun"></div>
+      <input type="hidden" name="ID" />
+      <input type="hidden" name="IDVERSAO" />
+      <input type="hidden" name="IDOPER" />
+      <input type="hidden" name="IDTAREFA" />
+      <input type="hidden" name="IDACTIV" />
+    </div>
+  </div>
+  <%- include("../../Templates/ACR/acr_3")%>
+</form>

@@ -1,0 +1,37 @@
+<div id="page_kpi">
+  <div class="mmk_container"><%=company%></div>
+  <span class="ghost topkpiValor"><%=topkpi%></span>
+  <div class="kpi_container">
+    <div class="kpi_graphics">
+      <%let cores_circulos = ["kpi_ball_red","kpi_ball_blue","kpi_ball_yellow","kpi_ball_green","kpi_ball_gray"]%>
+      <%for(var i = 0; i < topkpi.length; i++){%>
+        <%if(topkpi[i] === 0){%>
+          <div class="kpi_graphics_columns">
+            <div class="kpi_graphics_row_top"><canvas class="kpi_canvas"></canvas></div>
+            <div class="kpi_graphics_row_bot"><div class=<%=cores_circulos[i]%>><p class="kpi_ball_text">-----</p></div></div>
+          </div>
+        <%}else{%>
+          <%let number = (topkpi[i][1]/1000)*100%>
+          <div class="kpi_graphics_columns">
+            <div class="kpi_graphics_row_top"><canvas class="kpi_canvas"></canvas></div>
+            <div class="kpi_graphics_row_bot"><div class=<%=cores_circulos[i]%>><p class="kpi_ball_text"><%=number.toFixed(2)%>%</p></div></div>
+          </div>
+        <%}%>
+        
+      <%}%>
+    </div>
+    <div class="kpi_legends_container">
+      <div class="kpi_legends_columns">
+        <%let cores_quadrados = ["kpi_square_red","kpi_square_blue","kpi_square_yellow","kpi_square_green","kpi_square_gray"]%>
+        <%for(var i = 0; i < topkpi.length; i++){%>
+          <%if(topkpi[i] === 0){%>
+            <div class="kpi_legends_row"><p class="kpi_legends_number">-------</p><div class=<%=cores_quadrados[i]%>></div><button class="kpi_legends_legenda"></button></div>
+          <%}else{%>
+            <%let number = (topkpi[i][1]/1000)*100%>
+            <div class="kpi_legends_row"><p class="kpi_legends_number"><%=number.toFixed(2)%>%</p><div class=<%=cores_quadrados[i]%>></div><button class="kpi_legends_legenda"><%=topkpi[i][0]%></button></div>
+          <%}%>
+        <%}%>
+      </div>
+    </div>
+  </div>
+</div>

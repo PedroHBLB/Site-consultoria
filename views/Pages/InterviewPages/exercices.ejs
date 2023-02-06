@@ -1,0 +1,125 @@
+<div class="exercices_container">
+  <%- include ("../../Templates/RightSide/Headers/header_3") %> 
+  <%- include("../../Templates/RightSide/Navegations/navegation_5") %>
+  <section class="page_content">
+    <div class="exercices_content">
+      <%for(var a = 0; a<atividades.length;a++){%>
+          <div class="task_container">
+          <button class="all_button ativs_button" Taskdoor="close"><%=atividades[a].DESCRICAO%></button>
+          <%for(var e = 0; e<entrevistas.length;e++){%>
+            <%let num = 0%>
+            <% let grupo = 1%>
+            <%let listaIndicadores = []%>
+            <%let listaTemas = []%>
+            <%let IDrespen = []%>
+            <%if(atividades[a].ID == entrevistas[e].IDATIV){%>
+              <div class="entrevista_container">
+                <button class="all_button entrevista_button" Entrevistadoor="close"><%=entrevistas[e].TEXTO%></button>
+                  <%if(entrevistas[e].GRUPO){%>
+                    <%grupo = 4%>
+                <%}%>
+                <%for(var g = 0; g < grupo;g++){%>  
+                  <div class="entrevista_content" tipoentrada =<%=entrevistas[e].IDTIPOENTRADA%> grupo=<%=g%>>
+                  <%if(entrevistas[e].FLGINOUT == 0){%>      
+                    <div class="save_content" flagrupo=<%=entrevistas[e].GRUPO%>>
+                      <%if(entrevistas[e].GRUPO){%>
+                        <div class="chagen_entrevista_container"  grupo=<%=g%>>
+                          <button class="change_entrevista_button">A</button>
+                          <button class="change_entrevista_button">B</button>
+                          <button class="change_entrevista_button">C</button>
+                          <button class="change_entrevista_button">D</button>
+                        </div>
+                      <%}else{%>
+                        <div class="save_invisible"></div>
+                      <%}%>
+                      <button class="save_button save_padraoentrevista_button" entrevistaID=<%=entrevistas[e].ID%>><i class="fa-solid fa-floppy-disk button_text_pass"></i></button>
+                      <p class="ghost"><%=entrevistas[e].IDTIPOENTRADA%>;<%=entrevistas[e].IDVERSAO%>;<%=entrevistas[e].IDOPER%>;<%=entrevistas[e].IDTAREFA%>;<%=entrevistas[e].IDATIV%>;<%=entrevistas[e].TEXTO%>;<%=g%></p>
+                      <div class="e">
+                        <%for(var l = 0; l < respen.length;l++){%>
+                          <%if(entrevistas[e].TEXTO === respen[l].TEXTOTERMO  &&  entrevistas[e].ID === respen[l].IDPADRAOENTREVISTA && g == respen[l].GRUPO){%>
+                            <%IDrespen[g] = respen[l].ID%>
+                            <%if( respen[l] != undefined && respen[l].RESPOSTA != ""  ){%>
+                                <%listaIndicadores.push(respen[l].RESPOSTA.split(";"))%>
+                                <%listaTemas.push(respen[l].RESPOSTA.replaceAll(";", "9"))%>
+                            <%}else{%>
+                                <%listaIndicadores.push([])%>
+                            <%}%>
+                            <span class="ghost"><%=respen[l].RESPOSTA%></span>
+                            <span class="ghost"><%=respen[l].RESPMETA%></span>
+                            <span class="ghost"><%=respen[l].RESPREAL%></span>
+                            <span class="ghost"><%=respen[l].RESPOBJETIVO%></span>
+                            <span class="ghost"><%=respen[l].IDTIPOENTRADA%></span>
+                            <%num = l%>
+                          <%}%>
+                        <%}%>
+                      </div>
+                    </div>
+                    <%}%>
+                    
+                    <%if(entrevistas[e].IDTIPOENTRADA == 1){%>
+                      <%- include("exercicesPattern/textbox") %>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 2){%>
+                      <%- include("exercicesPattern/radiobutton", {g, num}) %>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 3){%>
+                      <%- include("exercicesPattern/rangeslider", {e,itensEscalas}) %>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 4){%>
+                      <%- include("exercicesPattern/combobox", {e, itensCombo, allFonte}) %>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 5){%>
+                      <p>Tipo de Entrada: Import Files</p>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 6){%>
+                      <%- include("exercicesPattern/showfiles", {entrevista: entrevistas[e]}) %>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 7){%>
+                      <%- include("exercicesPattern/showconsulting", {entrevista: entrevistas[e]}) %>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 8){%>
+                      <%- include("exercicesPattern/manualactivity") %>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 9){%>
+                      <p>Tipo de Entrada: Solution</p>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 10){%>
+                      <%- include("exercicesPattern/indicadores", {indicadores}) %>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 12){%>
+                      <%- include("exercicesPattern/bsc", {e, itensCombo, allFonte})%>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 13){%>
+                      <%- include("exercicesPattern/temas")%>
+                    <%}else if(entrevistas[e].IDTIPOENTRADA == 14){%>
+                      <%- include("exercicesPattern/projetos", {descricao, objetivo,estadoatual,estadometa})%>
+                    <%}%>
+                    <%if(entrevistas[e].FLAGMETA == 1 || entrevistas[e].FLAGREAL == 1 || entrevistas[e].FLAGOBJETIVO == 1){%>
+                      <div class="row_exercice">
+                        <%if(entrevistas[e].FLAGMETA == 1){%>
+                          <div class="column_exercice" mode="meta">
+                            <label>Meta</label>
+                            <input type="text"/>
+                          </div>
+                        <%}%>
+                        <%if(entrevistas[e].FLAGREAL == 1){%>
+                          <div class="column_exercice" mode="real">
+                            <label>Real</label>
+                            <input type="text"/>
+                          </div>
+                        <%}%>
+                        <%if(entrevistas[e].FLAGOBJETIVO == 1){%>
+                          <div class="column_exercice" mode="obj">
+                            <label>Objetivo</label>
+                            <input type="text"/>
+                          </div>
+                        <%}%>
+                      </div>
+                    <%}%>
+                  </div>
+              <%}%>
+              </div>  
+              <%if(entrevistas[e].IDTIPOENTRADA == 10){%>
+                <%- include ("exercicesDependents/exerciceIndicadores.ejs", {listaIndicadores, padraoentrevista:entrevistas[e] ,indicadoresCombo, respind, grupo, IDrespen}) %>
+              <%}%>
+              <%if(entrevistas[e].IDTIPOENTRADA == 13){%>
+                <%- include ("exercicesDependents/exerciceTemas.ejs", {listaTemas}) %>
+              <%}%>
+            <%}%>
+          <%}%>
+        </div>
+      <%}%>
+      <%- include("exercicesDependents/exerciceProject", {projetos, descricao, objetivo,estadoatual,estadometa})%>
+
+    </div>
+  </section>
+</div>

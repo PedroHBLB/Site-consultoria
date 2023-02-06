@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Workshops</title>
+    <script
+      src="https://kit.fontawesome.com/2904941b8d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <span class="ghost papel"><%=permission%></span>
+    <div class="container">
+      <%- include ("../Templates/LeftSide/leftside_5") %>
+      <div class="right_side">
+        <%- include ("../Templates/RightSide/Headers/header_2")  %>
+        <%- include ("../Templates/RightSide/CRUDs/crud_1")  %>
+        <main class="page_content">
+          <div id="workshop_oper_task">
+            <button class="all_button filter_button">Filtro</button>
+            <div class="row_workshop">
+              <div class="column_workshop">
+                <label class="workshop_label"> Passo Operacional</label>
+                <div class="select_container">
+                  <select class="workshop_select">
+                    <%for(var i = 0; i<oper.length; i++){%>
+                      <option idoper=<%=oper[i].ID%> ><%=oper[i].DESCRICAO%></option>
+                    <%}%>
+                  </select>
+                  <span class="square square_blue"></span>
+                </div>
+              </div>
+  
+              <div class="column_workshop">
+                <label class="workshop_label"> Tarefa</label>
+                <div class="select_container">
+                  <select class="workshop_select">
+                    <%for(var i = 0; i<task.length; i++){%>
+                      <option idoper=<%=task[i][1]%> idtarefa=<%=task[i][0]%> ><%=task[i][2]%></option>
+                    <%}%>
+                  </select>
+                  <span class="square square_blue"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="workshop_container">
+            <%- include ("../Pages/WorkshopPages/activities", {activities, entrevistas})  %>
+          </div>
+          <div class="workshop_crud_activiti_container">
+            <%- include ("../Pages/WorkshopPages/activitiesCRUD")  %>
+          </div>
+          <div class="workshop_crud_padraentrevista_container">
+            <%- include ("../Pages/WorkshopPages/padraoentrevistaCRUD", {classes, entradas, objetivos, combos, escalas})  %>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>  
+  <script type="module" src="../js/WorkshopFunction/ButtonActivCRUD/ButtonCrudPlusActiv.js"></script>
+  <script type="module" src="../js/WorkshopFunction/ButtonActivCRUD/ButtonCrudEditActiv.js"></script>
+  <script type="module" src="../js/WorkshopFunction/ButtonActivCRUD/ButtonCrudDeleteActiv.js"></script>
+  <script type="module" src="../js/WorkshopFunction/ButtonActivCRUD/ButtonAcrCancelActiv.js"></script>
+  
+  <script type="module" src="../js/WorkshopFunction/ButtonPadraoEntrevistaCRUD/ButtonCrudPlusPadraoEntrevista.js"></script>
+  <script type="module" src="../js/WorkshopFunction/ButtonPadraoEntrevistaCRUD/ButtonCrudEditPadraoEntrevista.js"></script>
+  <script type="module" src="../js/WorkshopFunction/ButtonPadraoEntrevistaCRUD/ButtonCrudDeletePadraoEntrevista.js"></script>
+  <script type="module" src="../js/WorkshopFunction/ButtonPadraoEntrevistaCRUD/ButtonAcrCancelPadraoEntrevista.js"></script>
+
+  <script type="module" src="../js/WorkshopFunction/Interaction/ActivitieButton.js"></script>
+  <script type="module" src="../js/WorkshopFunction/Interaction/ButtonPadraoEntrevista.js"></script>
+  <script type="module" src="../js/WorkshopFunction/Interaction/SelectChangeOper.js"></script>
+  <script type="module" src="../js/WorkshopFunction/Interaction/SelectChangeTask.js"></script>
+
+  <script type="module" src="../js/WorkshopFunction/PadraoEntrevistaChanges/InputOutputRadio.js"></script>
+  <script type="module" src="../js/WorkshopFunction/PadraoEntrevistaChanges/InputOutputSelect.js"></script>
+  <script type="module" src="../js/WorkshopFunction/PadraoEntrevistaChanges/ClasseSelect.js"></script>
+  <script type="module" src="../js/WorkshopFunction/PadraoEntrevistaChanges/FileInput.js"></script>
+  <script type="module" src="../js/WorkshopFunction/PadraoEntrevistaChanges/Text.js"></script> 
+
+   <script type="module" src="../js/WorkshopFunction/Rulles/Masks.js"></script>
+   <script type="module" src="../js/WorkshopFunction/Rulles/PermissionsCrud.js"></script>
+
+   <script type="module" src="../js/AllPages/functionControlPerfil.js"></script>
+   <script type="module" src="../js/AllPages/functionControlTabs.js"></script>
+   <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+</html>

@@ -1,0 +1,24 @@
+<%let agendasFeitas = 0%>
+<div class="main_operacional">
+    <button class="all_button main_company_button"  door="close" idoper="1" company_id=<%=companys[num][1]%>><%=companys[num][0]%></button>
+    <div class="main_oper_button_container">
+        <button class="main_oper_button red_button" id="1" color="crimson"><img src="Operational/kick.png"><br>Kick Off</button>
+        <button class="main_oper_button blue_button" id="2" color="blue"><img src="Operational/align.png"><br>Alignment</button>
+        <button class="main_oper_button yellow_button" id="3" color="gold"><img src="Operational/today.png"><br>Today View</button>
+        <button class="main_oper_button green_button" id="4" color="green"><img src="Operational/diag.png"><br>Diagnostic</button>
+        <button class="main_oper_button gray_button" id="5" color="gray"><img src="Operational/recom.png"><br>Recommendation</button>
+        <button class="main_oper_button purple_button" id="6" color="purple"><img src="Operational/action.png"><br>Action Plan</button>
+        <button class="main_oper_button pink_button" id="7" color="deepPink"><img src="Operational/close.png"><br>Closing</button>
+    </div>
+    <%for(let i = 0; i < schedules.length;i++){%>   
+        <%if(schedules[i][6] == companys[num][1]){%>
+            <%if(schedules[i][5] == 2){%>
+                <%agendasFeitas = agendasFeitas+1%> 
+            <%}%>
+        <%}%>
+    <%}%>
+    <div class="main_canvas">
+        <p class="canvasValue"><%=agendasFeitas%>/16</p>
+        <canvas class="myVariousCanvas" width="96" height="20px"></canvas>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Configurações</title>
+    <script src="https://kit.fontawesome.com/2904941b8d.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <span class="ghost papel"><%=rullesPermission%></span>
+    <div class="container">
+      <%- include ("../Templates/LeftSide/leftside_5") %>
+      <div class="right_side">
+        <%- include ("../Templates/RightSide/Headers/header_2", user) %> <%-
+        include ("../Templates/RightSide/CRUDs/crud_1") %>
+        <main class="page_content">
+          <div id="config_content_container">
+            <%- include("../Pages/ConfigPages/version", {versions}) %>
+            <%- include("../Pages/ConfigPages/operational", {opers}) %>
+            <%- include("../Pages/ConfigPages/task", {tasks}) %>
+            <%if(user.nome == "Fernando Vasconcelos Marcolina" || user.nome == "Ronaldo Brito"){%>
+              <%- include("../Pages/ConfigPages/permission", {permission}) %>
+            <%}%>
+          </div>
+          <div id="config_crud_container">
+            <%- include("../Pages/ConfigPages/versionCRUD") %> 
+            <%- include("../Pages/ConfigPages/operationalCRUD") %> 
+            <%- include("../Pages/ConfigPages/taskCRUD", {opers}) %>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+  <script src="../js/Change/PageConfiguration.js"></script>
+
+  <script src="../js/ConfigFunction/ButtonScrollBar/ButtonVersion.js"></script>
+  <script src="../js/ConfigFunction/ButtonScrollBar/ButtonTask.js"></script>
+  <script type="module" src="../js/ConfigFunction/ButtonScrollBar/ButtonOperational.js"></script>
+
+  <script type="module" src="../js/ConfigFunction/ButtonCRUD/ButtonCrudPlus.js"></script>
+  <script type="module" src="../js/ConfigFunction/ButtonCRUD/ButtonCrudEdit.js"></script>
+  <script type="module" src="../js/ConfigFunction/ButtonCRUD/ButtonCrudDelete.js"></script>
+  <script type="module" src="../js/ConfigFunction/ButtonCRUD/ButtonAcrCancel.js"></script>
+
+  <script src="../js/ConfigFunction/Selects/SelectOper.js"></script>
+
+  <script type="module" src="../js/ConfigFunction/Rulles/PermissionsCrud.js"></script>
+  <script type="module" src="../js/ConfigFunction/Rulles/Masks.js"></script>
+  <script type="module" src="../js/ConfigFunction/Rulles/Permissions.js"></script>
+
+  <script type="module" src="../js/AllPages/functionControlPerfil.js"></script>
+  <script type="module" src="../js/AllPages/functionControlTabs.js"></script>
+  <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+</html>

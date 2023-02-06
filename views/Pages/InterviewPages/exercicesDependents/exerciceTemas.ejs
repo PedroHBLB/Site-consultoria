@@ -1,0 +1,18 @@
+<%let num = 0%>
+<%if(listaTemas.length != 0){%>
+    <%num = listaTemas[0].split("9").length%>
+<%}%>
+<%if(num > 0){%>
+    <div>
+        <span class="temaRespostas"><%=listaTemas%></span>
+    </div>
+    <%for(var i = 0; i < num; i++){%>
+        <div class="entrevista_container temaRespostasContainer">
+            <button class="all_button entrevista_button" Entrevistadoor="close"></button>
+            <div class="entrevista_content">
+                <div class="temas_show_container">
+                </div>
+            </div>
+        </div>
+    <%}%>
+<%}%>

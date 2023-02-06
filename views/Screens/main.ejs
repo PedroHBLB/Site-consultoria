@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Main</title>
+    <script
+      src="https://kit.fontawesome.com/2904941b8d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <p class="ghost papelName"><%=papelName%></p>
+    <p class="ghost scheduleList">
+      <%for(var i=0;i<schedules.length;i++){ %>
+        <%=schedules[i]%>;
+      <%}%>
+    </p>
+    <div class="container">
+      <%- include ("../Templates/LeftSide/leftside_1",{company_id: empresaIdInicial}) %>
+      <div class="right_side">
+        <%- include ("../Templates/RightSide/Headers/header_1", {name, papelName, empresaName, linguas})  %>
+        <%- include ("../Templates/RightSide/Navegations/navegation_1", {company_id: empresaIdInicial})  %>
+        <%- include ("../Pages/MainPages/company", { companys, units, contacts, schedules}) %>
+      </div>
+    </div>
+  </body>  
+  <script type="module" src="../js/Change/PageMain.js"></script>
+
+  <script type="module" src="../js/MainFunction/ButtonShow/ButtonCompany.js"></script>
+  <script type="module" src="../js/MainFunction/ButtonShow/ButtonOper.js"></script>
+
+  <script type="module" src="../js/MainFunction/ButtonScrollBar/ButtonUnits.js"></script>
+  <script type="module" src="../js/MainFunction/ButtonScrollBar/ButtonContacts.js"></script>
+  <script type="module" src="../js/MainFunction/StartPage/completeBar.js"></script>
+  
+  <script type="module" src="../js/AllPages/functionButtonLanguage.js"></script>
+  <script type="module" src="../js/AllPages/functionControlPerfil.js"></script>
+  <script type="module" src="../js/AllPages/functionControlTabs.js"></script>
+  <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+
+</html>

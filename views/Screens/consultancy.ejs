@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Consultoria</title>
+    <script src="https://kit.fontawesome.com/2904941b8d.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <span class="ghost consultorias" consultoria_num="0"><%=consultorias%></span>
+    <span class="ghost consultores"><%=consultores%></span>
+    <span class="ghost papel"><%=permission%></span>
+    <div class="container">
+      <%- include ("../Templates/LeftSide/leftside_5") %>
+      <div class="right_side" mode="consultancy">
+        <%- include ("../Templates/RightSide/Headers/header_2", {user}) %> 
+        <%if(user.consultoria === 0){ %> 
+          <%- include ("../Templates/RightSide/Navegations/navegation_3", {abas: ["Dados Básicos", "Consultores"], consultorias}) %> 
+        <% }else { %> 
+          <%- include ("../Templates/RightSide/Navegations/navegation_2", {abas: ["Dados Básicos", "Consultores"]}) %> 
+        <% } %> 
+        <%- include ("../Templates/RightSide/CRUDs/crud_1") %>
+        <main class="page_content">
+          <%- include ("../Pages/ConsultancyPages/details") %> 
+          <%- include ("../Pages/ConsultancyPages/consultants") %>
+        </main>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="../js/Change/PageConsultancy.js"></script>  
+
+  <script type="module" src="../js/ConsultancyFunction/StartPages/StartConsultancy.js"></script>
+  <script type="module" src="../js/ConsultancyFunction/StartPages/StartConsultant.js"></script>
+  <script type="module" src="../js/ConsultancyFunction/StartPages/CheckConsultant.js"></script>
+   
+  <script type="module" src="../js/ConCliFunction/Interaction/ButtonCrudPlus.js"></script>
+  <script type="module" src="../js/ConCliFunction/Interaction/ButtonCrudEdit.js"></script>
+  <script type="module" src="../js/ConCliFunction/Interaction/ButtonCrudDelete.js"></script>
+  <script type="module" src="../js/ConCliFunction/Interaction/ButtonAcrCancel.js"></script>
+
+  <script type="module" src="../js/ConsultancyFunction/Interaction/ButtonAcrReset.js"></script>
+  <script type="module" src="../js/ConsultancyFunction/Interaction/SelectChangeConsultancy.js"></script>
+
+  <script type="module" src="../js/ConsultancyFunction/Rulles/PermissionsCrud.js"></script>
+  <script type="module" src="../js/ConsultancyFunction/Rulles/Masks.js"></script>
+  <script type="module" src="../js/ConsultancyFunction/Rulles/Zero.js"></script> 
+
+  <script type="module" src="../js/AllPages/functionControlPerfil.js"></script>
+  <script src="../js/AllPages/functionControlTabs.js"></script>
+  <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+</html>
+

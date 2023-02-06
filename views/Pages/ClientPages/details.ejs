@@ -1,0 +1,105 @@
+<form id="client_details" method="post" company=<%=company%>>
+  <div class="row_container">
+    <div class="column_container column_size_big">
+      <label class="label_1">Nome da Empresa que receberá a consultoria</label>
+      <input type="text" class="input_1" name="EM_NOME" required />
+    </div>
+    <div class="column_container column_size_small">
+      <label class="label_1">CNPJ</label>
+      <input type="text" class="input_1 cnpj" name="EM_CNPJ" required />
+    </div>
+    <div class="column_container column_size_small">
+      <label class="label_1">Nome Comercial</label>
+      <input type="text" class="input_1" name="PF_APELIDO" required />
+    </div>
+  </div>
+
+  <div class="row_container">
+    <div class="column_container column_size_mediun">
+      <label class="label_1">Pagina Web</label>
+      <input type="text" class="input_1" name="EM_WEBPAGE" required />
+    </div>
+    <div class="column_container column_size_small">
+      <label class="label_1">Telefone Comercial</label>
+      <input type="text" class="input_1 tel" name="EM_TELEMP" required />
+    </div>
+    <div class="column_container column_size_mediun">
+      <label class="label_1">Responsável pelo Contato</label>
+      <input type="text" class="input_1" name="PF_NOME" required />
+    </div>
+  </div>
+
+  <div class="row_container">
+    <div class="column_container column_size_mediun">
+      <label class="label_1">Cargo Contato</label>
+      <input type="text" class="input_1" name="PF_CARGO" required />
+    </div>
+    <div class="column_container column_size_mediun">
+      <label class="label_1">Entre em contato com o eMail</label>
+      <input type="text" class="input_1" name="PF_EMAIL" required />
+    </div>
+    <div class="column_container column_size_small">
+      <label class="label_1">Telefone do Contato</label>
+      <input type="text" class="input_1 tel" name="PF_TEL" required />
+    </div>
+  </div>
+
+  <div class="row_container">
+    <div class="column_container">
+      <label class="label_1">Tamanho da Empresa</label>
+      <div class="select_container">
+        <select class="ConCli_select" name="EM_IDROB" required>
+          <% for(var i = 0; i < selectRob.length;i++){ %>
+          <option><%=selectRob[i].CLASSIFICACAO%></option>
+          <% } %>
+        </select>
+        <span class="square square_black"></span>
+      </div>
+    </div>
+    <div class="column_container">
+      <label class="label_1">Setor</label>
+      <div class="select_container">
+        <select class="ConCli_select" name="EM_IDSETOR" required>
+          <% for(var i = 0; i < selectSetor.length;i++){ %>
+          <option><%=selectSetor[i].DESCRICAO%></option>
+          <% } %>
+        </select>
+        <span class="square square_black"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row_container">
+    <div class="column_container">
+      <label class="label_1">Consultoria Responsável</label>
+      <div class="select_container">
+        <select class="ConCli_select" name="EM_IDCONS" required>
+          <% for(var i = 0; i < selectConsultoria.length;i++){ %>
+          <option><%=selectConsultoria[i].CONSULTORIA%></option>
+          <% } %>
+        </select>
+        <span class="square square_black"></span>
+      </div>
+    </div>
+    <div class="column_container column_size_mediun">
+      <label class="label_1">
+        Empresa está Apta para receber a consultoria?</label
+      >
+      <diV>
+        <input type="radio" name="YesNo" value="1" required />
+        <label>Sim</label>
+      </diV>
+      <diV>
+        <input type="radio" name="YesNo" value="0" required />
+        <label>Não</label>
+      </diV>
+    </div>
+    <div class="column_container column_size_small">
+      <label class="label_1">Posição</label>
+      <input type="text" class="input_1 pos" name="POSICAO" required />
+    </div>
+    <input type="hidden" name="PosAnt">
+    <input type="hidden" name="ID" />
+  </div>
+  <%- include("../../Templates/ACR/acr_2",{tipo:"detailsClient"})%>
+</form>

@@ -1,0 +1,110 @@
+<div class="projetos_container">
+
+    <label class="projetos_label">Nome do Projeto:</label>
+    <input class="projetos_input" type="text">
+
+    <label class="projetos_label">Descrição:</label>
+    <div class="projeto_sub_container">
+        <div class="projetos_box">
+            <%for(var i = 0; i < descricao.length;i++){%>
+                <div class="projeto_container_button">
+                    <button class="projeto_padrao_button"></button>
+                    <span class="projeto_padrao_atributo"><%=descricao[i].TEXTO%></span>
+                </div>
+            <%}%>
+        </div>
+        <div class="pre_projetos_box">
+            <textarea class="projetos_textarea"></textarea>
+            <div class="projetos_button_container">
+                <button class="projeto_edit_button"><i class="fa-solid fa-pencil crud_icon"></i></button>
+            </div>
+            <span class="textoAtual ghost"></span>
+        </div>
+    </div>
+    
+    <label class="projetos_label">Objetivo:</label>
+    <div class="projeto_sub_container">
+        <div class="projetos_box">
+            <%for(var i = 0; i < objetivo.length;i++){%>
+                <div class="projeto_container_button">
+                    <button class="projeto_padrao_button"></button>
+                    <span class="projeto_padrao_atributo"><%=objetivo[i].TEXTO%></span>
+                </div>
+            <%}%>
+        </div>
+        <div class="pre_projetos_box">
+            <textarea class="projetos_textarea"></textarea>
+            <div class="projetos_button_container">
+                <button class="projeto_edit_button"><i class="fa-solid fa-pencil crud_icon"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <label class="projetos_label">Estado Atual:</label>
+    <div class="projeto_sub_container">
+        <div class="projetos_box">
+            <%for(var i = 0; i < estadoatual.length;i++){%>
+                <div class="projeto_container_button">
+                    <button class="projeto_padrao_button"></button>
+                    <span class="projeto_padrao_atributo"><%=estadoatual[i].TEXTO%></span>
+                </div>
+            <%}%>
+        </div>
+        <div class="pre_projetos_box">
+            <textarea class="projetos_textarea"></textarea>
+            <div class="projetos_button_container">
+                <button class="projeto_edit_button"><i class="fa-solid fa-pencil crud_icon"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <label class="projetos_label">Estado Desejado:</label>
+    <div class="projeto_sub_container">
+        <div class="projetos_box">
+            <%for(var i = 0; i < estadometa.length;i++){%>
+                <div class="projeto_container_button">
+                    <button class="projeto_padrao_button"></button>
+                    <span class="projeto_padrao_atributo"><%=estadometa[i].TEXTO%></span>
+                </div>
+            <%}%>
+        </div>
+        <div class="pre_projetos_box">
+            <textarea class="projetos_textarea"></textarea>
+            <div class="projetos_button_container">
+                <button class="projeto_edit_button"><i class="fa-solid fa-pencil crud_icon"></i></button>
+            </div>
+        </div>
+    </div>
+    <label class="projetos_label">Analises:</label>
+    <br>
+    <div class="row_projects">
+        <div class="column_project">
+            <input type="checkbox" name="analise1">
+            <label>MÃO DE OBRA</label>
+        </div>
+        <div class="column_project">
+            <input type="checkbox" name="analise2">
+            <label>MATERIAL</label>
+        </div>
+        <div class="column_project">
+            <input type="checkbox" name="analise3">
+            <label>MÉTODO</label>
+        </div>
+    </div>
+    <div class="row_projects">
+        <div class="column_project">
+            <input type="checkbox" name="analise4">
+            <label>MEDIÇÃO</label>
+        </div>
+        <div class="column_project">
+            <input type="checkbox" name="analise5">
+            <label>MÁQUINA</label>
+        </div>
+        <div class="column_project">
+            <input type="checkbox" name="analise6">
+            <label>MEIO AMBIENTE</label>
+        </div>
+    </div>
+
+</div>
+  

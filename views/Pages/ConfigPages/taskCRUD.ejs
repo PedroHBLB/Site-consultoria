@@ -1,0 +1,31 @@
+<form id="task_crud" class="config_crud_sub_container" method="post">
+    <div class="row_config">
+        <div class="column_config column_size_big_config">
+            <label class="config_label_up">Passo</label>
+            <div class="select_container">
+                <select class="config_select" name="IDOPER" required>
+                    <% for(var i = 0; i < opers.length; i++){ %>
+                        <option><%=opers[i][0]%></option>
+                    <%}%>
+                </select>
+                <span class="square square_blue"></span>
+            </div>
+        </div>
+        <div class="column_config column_size_big_config">   
+            <label class="config_label_up">Objetivos de Negócio</label>
+            <input type="text" class="config_input" name="DESCRICAO" required></input>
+        </div>
+        <div class="column_config column_size_small_config ">
+            <label class="config_label_up">Sequência</label>
+            <input type="text" class="config_input num" name="SEQUENCIA" required></input>
+        </div>
+    </div>
+    <div class="row_config">
+        <div class="column_config column_size_big_config">
+            <label class="config_label_up">Tool Tip</label>
+            <input type="text" class="config_input" name="TOOLTIP"></input>
+        </div>
+        <input type="hidden" class="ghost task_id" name="IDTASK"></input>
+    </div>
+    <%- include("../../Templates/ACR/acr_3")%>
+</form>

@@ -1,0 +1,23 @@
+<div class="indicadores_container size_content">
+  <div class="indicadores_select_container">
+      <div class="select_container">
+        <select class="exercice_Select" num="0">
+          <%for(var i = 0; i < indicadores.length; i++){%>
+            <option><%=indicadores[i]%></option>
+          <%}%>
+          <%for(var l = 0; l < indicadores.length; l++){%>
+            <option class="ghost"><%=l%> Itens%></option>
+          <%}%>
+        </select>
+        <span class="square square_blue"></span>
+      </div>
+      <div class="indicadores_plus">
+        <label>Adicionar Indicador na lista</label>
+        <div class="indicadores_plus_content">
+            <input type="text" class="indicadores_input"/>
+            <button class="indicadores_button"><i class="fa-solid fa-plus button_indicadores_icon"></i></button>
+        </div>
+      </div>
+    </div>
+  <div class="indicadores_buttons_container"></div>
+</div>

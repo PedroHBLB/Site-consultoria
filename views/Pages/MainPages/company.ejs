@@ -1,0 +1,11 @@
+<div id="main_container">
+  <div class="main_scrollbar">
+    <% for(var i=0; i<companys.length;i++){ %>
+    <div class="main_company">
+      <%- include ("companyContent/oper.ejs", {num: i, companys: companys, schedules})%>
+      <%- include ("companyContent/nav.ejs", {abas: ["Dados Básicos", "Unidades", "Contatos", "Agenda"]}) %>
+      <%- include ("companyContent/content.ejs", {num: i, companys, units, contacts, schedules}) %>
+    </div>
+    <% } %>
+  </div>
+</div>

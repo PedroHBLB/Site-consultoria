@@ -1,0 +1,30 @@
+<button class="all_button config_object_button"  num=-1>Passo Operacional</button>
+<div class="config_object_continer">
+  <div class="button_container">
+    <%for(var i = 0;i<opers.length; i++){%>
+      <button class="all_button scroll_button oper_button">
+        <p><%=opers[i][0]%></p>
+        <hr class="button_middle_line" />
+        <img src=<%=opers[i][2]%> />
+        <p class="ghost atributes_oper"><%=opers[i][0]%>;<%=opers[i][1]%>;<%=opers[i][2]%>;<%=opers[i][3]%>;<%=opers[i][4]%>;<%=opers[i][5]%></p>
+      </button>
+    <%}%>
+  </div>
+
+  <hr class="button_middle_line" />
+
+  <div class="row_config">
+    <div class="column_config">
+      <label class="config_label_up">Passo</label>
+      <label class="config_label_down oper_label" id="config_size_row_step"></label>
+    </div>
+    <div class="column_config">
+      <label class="config_label_up">Detalhe</label>
+      <label class="config_label_down oper_label" id="config_size_row_details"></label>
+    </div>
+    <div class="column_config" id="icon_container">
+      <label class="config_label_up">Icone</label>
+      <img class="oper_label" src="" />
+    </div>
+  </div>
+</div>

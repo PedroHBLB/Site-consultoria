@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Benchmark Empresa</title>
+    <script
+      src="https://kit.fontawesome.com/2904941b8d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <%- include ("../Templates/LeftSide/leftside_2") %>
+      <div class="right_side">
+        <%- include ("../Templates/RightSide/Headers/header_1", {name, papelName, empresaName}) %> 
+        <%- include ("../Templates/RightSide/Navegations/navegation_4", {abas: ["Matrix Importance x Performance", "Top 5 KPIs para a jornada", "Mapa de Maturidade", "Projetos", "Piramide"]}) %>
+        <main class="page_content">
+          <%- include("../Pages/CompanyPages/mip", {company:empresaClient, dados}) %> 
+          <%- include("../Pages/CompanyPages/kpi", {company:empresaClient, topkpi}) %>
+          <%- include("../Pages/CompanyPages/maturity", {company:empresaClient}) %>
+          <%- include("../Pages/CompanyPages/projects", {projects}) %> 
+          <%- include("../Pages/CompanyPages/piramide") %> 
+        </main>
+      </div>
+  </body>
+  <script type="module" src="../js/Change/PageCompany.js"></script>
+
+  <script type="module" src="../js/AllPages/functionControlPerfil.js"></script>
+  <script src="../js/AllPages/functionControlTabs.js"></script>
+  <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="../js/CompanyFunction/Graphics/graphicsMip.js"></script>
+  <script type="module" src="../js/CompanyFunction/Graphics/graphicsKPI.js"></script>
+  <script type="module" src="../js/CompanyFunction/Graphics/graphicsProject.js"></script>
+  <script type="module" src="../js/CompanyFunction/Projectts/projectsPass.js"></script>
+  <script type="module" src="../js/CompanyFunction/Projectts/projectShow.js"></script>
+  <script type="module" src="../js/CompanyFunction/Projectts/projectStart.js"></script>
+
+  
+</html>

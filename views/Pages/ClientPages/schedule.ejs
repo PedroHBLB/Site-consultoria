@@ -1,0 +1,68 @@
+<div class="ConCli_page_button_scrollbar">
+  <div class="button_scrollbar_container"></div>
+
+  <hr class="ConCli_middle_line" />
+  <form class="ConCli_info_container" method="post">
+    <div class="row_container">
+      <div class="column_container column_size_big">
+        <label class="label_1">Dinâmica Operacional</label>
+        <div class="select_container">
+          <select class="ConCli_select schedule_select" name="IDOPER">
+            <% for(var i = 0; i < selectOper.length;i++){ %>
+            <option class="options_oper" oper=<%=selectOper[i].ID%>
+              ><%=selectOper[i].DESCRICAO%>
+            </option>
+            <% } %>
+          </select>
+          <span class="square square_black"></span>
+        </div>
+      </div>
+      <div class="column_container column_size_big">
+        <label class="label_1">Tarefa</label>
+        <div class="select_container">
+          <select class="ConCli_select schedule_select" name="IDTAREFA">
+            <% for(var i = 0; i < selectTask.length;i++){ %>
+            <option oper=<%=selectTask[i][1]%>
+              ><%=selectTask[i][0]%>
+            </option>
+            <% } %>
+          </select>
+          <span class="square square_black"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Data Prevista</label>
+        <input type="date" class="input_1" name="DTPREV" required />
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Data de Inicio Real</label>
+        <input type="date" class="input_1" name="DTINIC" />
+      </div>
+      <div class="column_container">
+        <label class="label_1">Data de Termino Real</label>
+        <input type="date" class="input_1" name="DREXEC" />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_small">
+        <label class="label_1">Status</label>
+        <div class="select_container">
+          <select class="ConCli_select schedule_select" name="STATUS">
+            <option class="options_status">Não Iniciado</option>
+            <option class="options_status">Iniciado</option>
+            <option class="options_status">Encerrado</option>
+          </select>
+          <span class="square square_black"></span>
+        </div>
+        <input type="hidden" name="ID" />
+        <input type="hidden" name="IDEMP" />
+      </div>
+    </div>
+
+    <%- include("../../Templates/ACR/acr_2",{tipo:"client"})%>
+  </form>
+</div>

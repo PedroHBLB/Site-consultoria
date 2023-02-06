@@ -1,0 +1,78 @@
+<div class="ConCli_page_button_scrollbar">
+  <div class="button_scrollbar_container"></div>
+
+  <hr class="ConCli_middle_line" />
+  <form class="ConCli_info_container" method="post">
+    <div class="row_container">
+      <div class="column_container column_size_big">
+        <label class="label_1">Nome do Contato</label>
+        <input type="text" class="input_1" name="CT_NOME" required />
+      </div>
+      <div class="column_container column_size_big">
+        <label class="label_1">Cargo Contato</label>
+        <input type="text" class="input_1" name="CT_CARGO" required />
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Telefone do Contato</label>
+        <input type="text" class="input_1 tel" name="CT_TEL" required />
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Entre em contato com eMail</label>
+        <input type="text" class="input_1" name="CT_EMAIL" required />
+      </div>
+      <div class="column_container">
+        <label class="label_1">Nome da Unidade</label>
+        <div class="select_container">
+          <select class="ConCli_select" name="IDUNI">
+            <% for(var i = 0; i < selectUnidade.length;i++){ %>
+            <option><%=selectUnidade[i].UN_NOME%></option>
+            <% } %>
+          </select>
+          <span class="square square_black"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row_container">
+      <div class="column_container column_size_big">
+        <label class="label_1">Departamento</label>
+        <div class="select_container">
+          <select class="ConCli_select" name="IDAREA">
+            <% for(var i = 0; i < selectArea.length;i++){ %>
+            <option><%=selectArea[i].DESCRICAO%></option>
+            <% } %>
+          </select>
+          <span class="square square_black"></span>
+        </div>
+      </div>
+      <div class="column_container column_size_mediun">
+        <label class="label_1">Papel</label>
+        <div class="select_container">
+          <select class="ConCli_select" name="IDPAPEL">
+            <option>Respondente</option>
+            <option>Líder/Encarregado de Equipe (Cliente)</option>
+          </select>
+          <span class="square square_black"></span>
+        </div>
+      </div>
+      <div class="column_container column_size_small">
+        <label class="label_1">Lingua</label>
+        <div class="select_container">
+          <select class="ConCli_select" name="CT_LINGUA">
+            <% for(var i = 0; i < selectLingua.length;i++){ %>
+            <option><%=selectLingua[i].LaNGID%></option>
+            <% } %>
+          </select>
+          <span class="square square_black"></span>
+        </div>
+      </div>
+      <input type="hidden" name="ID" />
+      <input type="hidden" name="IDEMP" />
+    </div>
+
+    <%- include("../../Templates/ACR/acr_1", {tipo:"client"})%>
+  </form>
+</div>

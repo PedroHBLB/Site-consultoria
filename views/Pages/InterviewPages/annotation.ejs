@@ -1,0 +1,39 @@
+<div class="annotation_container">
+  <%- include ("../../Templates/RightSide/Headers/header_4") %> 
+  <%- include ("../../Templates/RightSide/CRUDs/crud_2") %>
+  <div class="page_content">
+    <form method="post" action="/forms/CreateAnot" class="annotation_form">
+      <div class="annotation_form_top">
+        <div class="column_annotation_form">
+          <label class="annotation_form_label">Titulo</label>
+          <input type="text" name="TITULO" class="text_annotation_form" required>
+        </div>
+        <div class="row_annotation_form">
+          <div class="column_annotation_form">
+            <label class="annotation_form_label">Anotação</label>
+            <textarea class="textarea_annotation_form"></textarea>
+            <input type="hidden" name="TEXTO" required>
+          </div>
+          <%- include ("../../Templates/ACR/acr_5")%>
+        </div>
+        <input type="hidden" name="IDEMP" value=<%=schedule.IDEMP%>>
+        <input type="hidden" name="IDOPER" value=<%=schedule.IDOPER%>>
+        <input type="hidden" name="IDTAREFA" value=<%=schedule.IDTAREFA%>>
+        <input type="hidden" name="RESEND" value=<%=resend%>>
+      </div>
+    </form>
+    <div class="annotation_scrollbar">
+      <div class="button_scrollbar_annotation_container">
+        <%for(var i = 0; i < anotacoes.length; i++){%>
+          <div>
+            <button class="all_button annotation_crud_button annotation_crud_edit" id=<%=anotacoes[i].ID%>><i class="fa-solid fa-pencil crud_icon"></i></button>
+            <button class="all_button annotation_crud_button annotation_crud_delete" id=<%=anotacoes[i].ID%>><i class="fa-solid fa-trash crud_icon"></i></button>
+            <label class="annotation_scrollbar_label"><%=anotacoes[i].TITULO%></label>
+            <span class="ghost"><%=anotacoes[i].TEXTO%></span>
+            <span class="ghost"><%=resend%></span>
+          </div>
+        <%}%>
+      </div>
+    </div>
+  </div>
+</div>

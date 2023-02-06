@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Benchmark Industria</title>
+    <script
+      src="https://kit.fontawesome.com/2904941b8d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <span class="ghost objetivos"><%=objetivo%></span>
+    <span class="ghost sucessLista"><%=sucessLista[0]%>
+      <%for(var i = 1; i < sucessLista.length; i++){%>
+        !<%=sucessLista[i]%>
+      <%}%></span>
+    <div class="container">
+      <%- include ("../Templates/LeftSide/leftside_2") %>
+      <div class="right_side">
+        <%- include ("../Templates/RightSide/Headers/header_1",{name, papelName,empresaName, linguas}) %> 
+        <%- include ("../Templates/RightSide/Navegations/navegation_4", {abas: ["Taxa de Sucesso Esperada", "Top Targets", "Distribuição dos investimentos", "Uso das Tecnologias Habilitadoras"]}) %>
+        <main class="page_content_industry">
+          <%- include("../Pages/IndustryPages/sucess", {size: sucessLista.length}) %>
+          <%- include("../Pages/IndustryPages/top") %> 
+          <%- include("../Pages/IndustryPages/invest") %>
+          <%- include("../Pages/IndustryPages/tech",{tech, year}) %>
+        </main>
+      </div>
+  </body>
+  <script type="module" src="../js/Change/PageIndustry.js"></script>
+
+  <script type="module" src="../js/AllPages/functionControlPerfil.js"></script>
+  <script src="../js/AllPages/functionControlTabs.js"></script>
+  <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="../js/IndustryFunction/Graphics/graphicsSucess.js"></script>
+  <script type="module" src="../js/IndustryFunction/Graphics/graphicsTopTarget.js"></script>
+  <script type="module" src="../js/IndustryFunction/Graphics/graphicsTech.js"></script>
+  <script type="module" src="../js/IndustryFunction/Graphics/graphicsInvest.js"></script>
+  <script type="module" src="../js/IndustryFunction/Interaction/sucessPass.js"></script>
+</html>

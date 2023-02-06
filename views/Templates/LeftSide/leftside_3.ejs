@@ -1,0 +1,36 @@
+<aside class="left_side">
+  <div class="left_side_container">
+    <div class="left_side_sub_container" color=<%=flagExercice[2]%>>
+        <div class="left_side_header">
+          <img class="left_side_header_img" src=<%=flagExercice[1]%> />
+          <h1 class="left_side_header_title"><%=flagExercice[0]%></h1>
+        </div>
+  
+        <hr class="left_side_middle_line_1" />
+  
+        <div class="left_side_content">
+          <h2><%=flagExercice[3]%></h2>
+          <br />
+          <label class="left_side_label">Data Prevista</label>
+          <label class="left_side_label"><%=data[0]%></label>
+          <label class="left_side_label">Data de Termino Real</label>
+          <label class="left_side_label"><%=data[1]%></label>
+        </div>
+    </div>
+
+    <!-- <div class="left_side_space"></div> -->
+
+    <div class="left_side_sub_container">
+      <hr class="left_side_middle_line_2" />
+      <%if(status != "2"){%>
+        <form action="/forms/Respentrevistas" method="post" class="Send_container" idregen=<%=idregen%>>
+          <input type="submit" class="all_button interview_side_button" value="Salvar Tarefa">
+          <input type="submit" class="all_button interview_side_button" value="Encerrar Tarefa">
+        </form>
+      <%}else{%>
+          <button class="all_button interview_side_only_button">Retornar</button>
+      <%}%>
+      <p class="ghost status"><%=status%></p>
+    </div>
+  </div>
+</aside>

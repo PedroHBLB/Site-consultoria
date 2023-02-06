@@ -1,0 +1,13 @@
+<div class="showfile_container">
+    <p><%entrevista.FILETYPE%></p>
+    <% let arquivo = "/fotosPD/"+entrevista.FILESOURCE%>
+    <%if(entrevista.FILETYPE === "image"){%>
+        <img class="show_consulting" alt= "IMAGEM" src=<%=arquivo%>>
+    <%}else if(entrevista.FILETYPE === "video"){%>
+    <video width="90%" height="90%" controls>
+        <source type="video/mp4" src=<%=arquivo%>>
+    </video>
+    <%}else if(entrevista.FILETYPE === "application"){%>
+        <embed src=<%=arquivo%> width="90%" height="90%" type="application/pdf" alt=>
+    <%}%>
+</div>

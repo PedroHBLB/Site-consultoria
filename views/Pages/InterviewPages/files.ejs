@@ -1,0 +1,40 @@
+<div class="file_container">
+  <%- include ("../../Templates/RightSide/Headers/header_4") %> 
+  <%- include ("../../Templates/RightSide/CRUDs/crud_2") %>
+  <div class="page_content">
+    <form class="file_content" method="post" action="/forms/CreateFile" enctype="multipart/form-data">
+      <input type="hidden" name="IDEMP" value=<%=schedule.IDEMP%>>
+      <input type="hidden" name="IDOPER" value=<%=schedule.IDOPER%>>
+      <input type="hidden" name="IDTAREFA" value=<%=schedule.IDTAREFA%>>
+      <input type="hidden" name="EMPRESA" value=<%=empresa%>>
+      <label class="file_label" for="arquivo">Envie seu Arquivo</label>
+      <input type="file" name="FILENAME" id="arquivo"/>
+      <label class="file_show">Esperando Arquivo...</label>
+      <input TYPE="hidden" name="RESEND" value=<%=resend%>>
+      <%- include ("../../Templates/ACR/acr_3")%>
+    </form>
+    <div class="file_scrollbar">
+      <div class="button_scrollbar_file_container">
+        <div class="filename_div_text">
+          <p class="filename_text"></p>
+        </div>
+          <div class="alinhamento_1">
+            <%for(var i = 0; i < documents.length; i++){%>
+              <button class="all_button file_scroll_button" id=<%=documents[i].ID%> FileName=<%=documents[i].FILENAME%> FileTipo=<%=documents[i].FILETYPE%> FileSrc=<%=documents[i].FILESOURCE%> empresa=<%=empresa%>>
+                <%if(documents[i].FILETYPE === "image"){%>
+                  <p class="button_file_text">Imagem</p>
+                <%}else if(documents[i].FILETYPE === "video"){%>
+                  <p class="button_file_text">Video</p>
+                <%}else if(documents[i].FILETYPE === "application"){%>
+                  <p class="button_file_text">Aplicação</p>
+                <%}%>
+                <span class="ghost"><%=resend%></span>
+              </button>
+            <%}%>
+          </div>
+          <div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

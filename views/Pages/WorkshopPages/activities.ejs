@@ -1,0 +1,55 @@
+<div class="workshop_content_container">
+  <% for(var i = 0; i < activities.length; i++){ %>
+  <div class="workshop_activities_content" idoper=<%=activities[i][6]%>
+    idtarefa=<%=activities[i][7]%>>
+    <button
+      class="all_button workshop_activite_button" ID=<%=activities[i][0]%>
+      door="close"><%=activities[i][2]%>
+    </button>
+    <div class="activities_crud_container">
+      <div class="activities_crud_sub_container" num="-1">
+        <button class="all_button crud_button plus_padraoentrevista">
+          <i class="fa-solid fa-plus crud_icon"></i>
+        </button>
+        <button class="all_button crud_button edit_padraoentrevista">
+          <i class="fa-solid fa-pencil crud_icon"></i>
+        </button>
+        <button class="all_button crud_button delete_padraoentrevista">
+          <i class="fa-solid fa-trash crud_icon"></i>
+        </button>
+        <span class="ghost"></span>
+      </div>
+    </div>
+    <div class="workshop_interview">
+      <%for(var j = 0; j < entrevistas.length;j++){%> <%if(entrevistas[j].IDATIV === activities[i][0]){%>
+      <div class="row_workshop_padraoentrevista" color="white">
+        <%let entrada = ''%> 
+        <%if(entrevistas[j].FLGINOUT){%> 
+          <%entrada = "Saída de Dados"%> 
+        <%}else{%> 
+          <%entrada = "Entrada de Dados"%>
+        <%}%>
+        <div class="column_workshop_padraoentrevista column_size_mediun">
+          <label class="label_5">Entrada ou Saída de Dados?</label>
+          <label class="input_3"><%=entrada%></label>
+        </div>
+        <div class="column_workshop_padraoentrevista column_size_small">
+          <label class="label_5">Tipo de Controle</label>
+          <label class="input_3"><%=entrevistas[j].IDTIPOENTRADA%></label>
+        </div>
+        <div class="column_workshop_padraoentrevista column_size_big">
+          <label class="label_5">Texto</label>
+          <label class="input_3"><%=entrevistas[j].TEXTO%></label>
+        </div>
+        <span class="ghost"
+          ><%=entrevistas[j].ID%>;<%=entrevistas[j].TEXTO%>;<%=entrevistas[j].SEQUENCIA%>;<%=entrevistas[j].IDCLASS%>;<%=entrevistas[j].IDOBJ%>;<%=entrevistas[j].FLGINOUT%>;<%=entrevistas[j].IDTIPOENTRADA%>;<%=entrevistas[j].FLAGMETA%>;<%=entrevistas[j].FLAGREAL%>;<%=entrevistas[j].FLAGOBJETIVO%>;<%=entrevistas[j].COMBOSOURCE%>;<%=entrevistas[j].FILESOURCE%>;<%=entrevistas[j].IDESCALA%>;<%=entrevistas[j].FILENAME%>;<%=entrevistas[j].GRUPO%></span
+        >
+      </div>
+      <%}%> <%}%>
+    </div>
+    <span class="ghost"
+      ><%=activities[i][0]%>;<%=activities[i][1]%>;<%=activities[i][2]%>;<%=activities[i][3]%>;<%=activities[i][4]%>;<%=activities[i][5]%></span
+    >
+  </div>
+  <% } %>
+</div>

@@ -1,0 +1,30 @@
+<div id="page_tech" class="industryPage">
+    <div class="ghost tech"><%=tech%></div>
+    <div class="ghost year"><%=year%></div>
+    <div class="sitt_container">
+        <div class="tech_container">
+            <%for(var i = 0; i < year.length; i++){%>
+                <div class="tech_year_container">
+                    <div class="tech_top" number=<%=year[i]-2021%>>
+
+                    </div>
+                    <div class="tech_bot"></div>
+                    <p class="tech_text">Ano <%=year[i]-2021%></p>
+                </div>
+            <%}%>
+            <div class="tech_legend_container">
+                <div class="tech_row"><div class="tech_square" style="background-color: #98CE00;"></div><p>Machine Learning</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #E83151;"></div><p>IoT</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #CBF3D2;"></div><p>Robots</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #34E5FF;"></div><p>3D, RA, RV, xR</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #F0803C;"></div><p>Digital Twin</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #20A39E;"></div><p>RPA</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #F7EE7F;"></div><p>Cloud</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #F991CC;"></div><p>Vision System</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #5DFDCB;"></div><p>APS</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #DB5461;"></div><p>MES</p></div>
+                <div class="tech_row"><div class="tech_square" style="background-color: #6E2594;"></div><p>Cybersecurity</p></div>
+            </div>
+        </div>
+    </div>
+</div>

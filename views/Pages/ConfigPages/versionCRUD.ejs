@@ -1,0 +1,26 @@
+<form id="version_crud" class="config_crud_sub_container" method="post">
+        <div class="row_config">
+            <div class="column_config column_size_big_config">
+                <label class="config_label_up">Historico</label>
+                <input type="text" class="config_input" name="HISTORICO" required></input>
+            </div>
+            <div class="column_config column_size_medium_config">
+                <label class="config_label_up">Data</label>
+                <input type="date" class="config_input" name="DATA" required></input>
+            </div>
+            <div class="column_config column_size_small_config">
+                <label class="label_1">
+                    Atividade?</label>
+                <diV>
+                  <input type="radio" name="AtivoBloqueado" value=1 required/>
+                  <label>Ativo</label>
+                </diV>
+                <diV>
+                  <input type="radio" name="AtivoBloqueado" value=0 required/>
+                  <label>Bloqueado</label>
+                </diV>
+            </div>
+            <input type="hidden" class="ghost version_id" name="IDVERSION"></input>
+        </div>
+        <%- include("../../Templates/ACR/acr_3")%>
+</form>

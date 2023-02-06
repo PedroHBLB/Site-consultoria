@@ -1,0 +1,16 @@
+<div class="slider_container size_content">
+  <p>Selecione uma opção</p>
+  <div class="sliderText">
+  
+  </div>
+  <input type="range" min=<%=entrevistas[e].SLIDERMIN%> max=<%=entrevistas[e].SLIDERMAX%> class="slider" value=1>
+  <div class="ghost">
+      <%for(var l = 0; l < itensEscalas.length; l++){%>
+        <%if(itensEscalas[l][0] === entrevistas[e].IDESCALA){%>
+          <%for(var m = 1; m < itensEscalas[l].length; m++){%>
+              <%=itensEscalas[l][m]%>;
+          <%}%>
+        <%}%>
+      <%}%>
+  </div>
+</div>

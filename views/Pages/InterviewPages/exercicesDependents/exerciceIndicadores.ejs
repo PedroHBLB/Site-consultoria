@@ -1,0 +1,28 @@
+<%if(listaIndicadores.length > 0){%>
+  <div class="entrevista_container">
+    <button class="all_button entrevista_button" Entrevistadoor="close">Barreiras</button>
+    <%for(var g = 0; g < grupo;g++){%>
+      <div class="entrevista_content size_content_barrier many_barriers" tipoentrada="11" grupo=<%=g%>>              
+        <div class="save_content">
+          <%if(grupo === 4){%>
+            <div class="chagen_entrevista_container"  grupo=<%=g%>>
+              <button class="change_entrevista_button" num="0">A</button>
+              <button class="change_entrevista_button" num="1">B</button>
+              <button class="change_entrevista_button" num="2">C</button>
+              <button class="change_entrevista_button" num="3">D</button>
+            </div>
+          <%}else{%>
+            <div></div>
+          <%}%>
+          <button class="save_button save_indicadoronly_button" grupo=<%=g%>><i class="fa-solid fa-floppy-disk button_text_pass"></i></button>
+          <p class="ghost indicadoresBarrier" idrespen=<%=IDrespen[g]%>><%=padraoentrevista.ID%>;<%=listaIndicadores[g]%></p>
+        </div>
+        <%- include("../exercicesPattern/barrier", {respind, idPD: padraoentrevista.ID, g, IDrespen}) %>
+        <%- include("../exercicesPattern/indicadoronly")%>
+      </div>
+    <%}%>  
+  </div>
+<%}%>
+
+
+

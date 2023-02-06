@@ -1,0 +1,127 @@
+<div class="indicadoronly_container size_content" indicador="" barreira="">
+    <div class="indicadoronly_objetivo">
+        <h1>Objetivos</h1>
+        <div class="indicadoronly_radio">
+            <input type="checkbox" name="IndObj_Con" class="radio_input_2"  value="Confiabilidade">Confiabilidade</input>
+            <input type="checkbox" name="IndObj_Cus" class="radio_input_2"  value="Custo">Custo</input>
+            <input type="checkbox" name="IndObj_Qua" class="radio_input_2"  value="Qualidade">Qualidade</input>
+            <input type="checkbox" name="IndObj_Ino" class="radio_input_2"  value="Inovação">Inovação</input>
+            <input type="checkbox" name="IndObj_Vel" class="radio_input_2"  value="Velocidade">Velocidade</input>
+            <input type="checkbox" name="IndObj_Fle" class="radio_input_2"  value="Flexibilidade">Flexibilidade</input>
+        </div>
+    </div>
+    <div class="row_indicadoronly_1">
+        <div class="column_exercice">
+            <label>Meta</label>
+            <input type="text" class="input_indicadoronly num_point">
+        </div>
+        <div class="column_exercice">
+            <label>Real</label>
+            <input type="text" class="input_indicadoronly num_point">
+        </div>
+        <div class="column_exercice">
+            <label>Objetivo</label>
+            <input type="text" class="input_indicadoronly num_point">
+        </div>
+    </div>
+    <div class="row_indicadoronly_1">
+        <div class="column_exercice column_size_big">
+            <label >Barreira</label>
+            <input type="text" class="input_indicadoronly">
+        </div>
+    </div>
+    <div class="row_indicadoronly_2">
+        <div class="column_exercice column_indicadoronly_size_big"> 
+            <label >Efeito da Barreira</label>
+            <div class="select_container">
+                <select class="exercice_indicadoronly_Select exercice_indicadoronly_Select_size_small">
+                    <%for(var l =0; l < indicadoresCombo.length; l++){%>
+                        <%if(indicadoresCombo[l].FONTE == "Efeito de Barreira"){%>
+                            <option><%=indicadoresCombo[l].TEXTO%></option>
+                        <%}%>
+                    <%}%>
+                </select>
+                <span class="square square_blue"></span>
+              </div>
+        </div>
+        <div class="column_exercice column_indicadoronly_size_extrabig">
+            <label >Severidade</label>
+            <div class="select_container">
+                <select class="exercice_indicadoronly_Select ">
+                    <option>1-Minima - O indicador é marginalmente afetado</option>
+                    <option>2-O indicador sofre ligeira deterioração no desempenho causando pouco distúrbio na cadeia de valor</option>
+                    <option>3-O indicador sofre ligeira deterioração no desempenho causando pouco distúrbio na cadeia de valor</option>
+                    <option>4-Moderada - A deterioração significativa no desempenho da produção com falha na cadeia de valor</option>
+                    <option>5-Moderada - A deterioração significativa no desempenho da produção com falha na cadeia de valor</option>
+                    <option>6-Moderada - A deterioração significativa no desempenho da produção com falha na cadeia de valor</option>
+                    <option>7-Alta - A produção deixa de atender a cadeia de valor</option>
+                    <option>8-Alta - A produção deixa de atender a cadeia de valor</option>
+                    <option>9-Altssima - Idem ao anterior, porém  afeta a segurança</option>
+                    <option>10-Altssima - Idem ao anterior, porém  afeta a segurança</option>
+                </select>
+                <span class="square square_blue"></span>
+              </div>
+        </div>
+    </div>
+    <div class="row_indicadoronly_2">
+        <div class="column_exercice column_indicadoronly_size_big">
+            <label >Causa</label>
+            <div class="select_container">
+                <select class="exercice_indicadoronly_Select exercice_indicadoronly_Select_size_small">
+                    <%for(var l =0; l < indicadoresCombo.length; l++){%>
+                        <%if(indicadoresCombo[l].FONTE == "Causa"){%>
+                            <option><%=indicadoresCombo[l].TEXTO%></option>
+                        <%}%>
+                    <%}%>
+                </select>
+                <span class="square square_blue"></span>
+              </div>
+        </div>
+        <div class="column_exercice column_indicadoronly_size_extrabig">
+            <label>Ocorrência</label>
+            <div class="select_container">
+                <select class="exercice_indicadoronly_Select ">
+                    <option>1-Remota</option>
+                    <option>2-Pequena</option>
+                    <option>3-Pequena</option>
+                    <option>4-Moderada</option>
+                    <option>5-Moderada</option>
+                    <option>6-Moderada</option>
+                    <option>7-Alta</option>
+                    <option>8-Alta</option>
+                    <option>9-Altssima</option>
+                    <option>10-Altssima</option>
+                </select>
+                <span class="square square_blue"></span>
+              </div>
+        </div>
+    </div>
+    <div class="row_indicadoronly_2">
+        <div class="column_exercice column_indicadoronly_size_big">
+            <label>Controles Atuais</label>
+            <input type="text" class="input_indicadoronly">
+        </div>
+        <div class="column_exercice column_indicadoronly_size_extrabig">
+            <label>Detecção</label>
+            <div class="select_container">
+                <select class="exercice_indicadoronly_Select ">
+                    <option>1-Altíssima-Certamente será detectado</option>
+                    <option>2-Alta-Grande probabilidade de ser detectado</option>
+                    <option>3-Alta-Grande probabilidade de ser detectado</option>
+                    <option>4-Moderada-Provavelmente será detectado</option>
+                    <option>5-Moderada-Provavelmente será detectado</option>
+                    <option>6-Moderada-Provavelmente será detectado</option>
+                    <option>7-Pequena-Provavelmente não será detectado</option>
+                    <option>8-Pequena-Provavelmente não será detectado</option>
+                    <option>9-Mínima-Certamente não será detectado</option>
+                    <option>10-Mínima-Certamente não será detectado</option>
+                </select>
+                <span class="square square_blue"></span>
+              </div>
+        </div>
+    </div>
+    <div class="row_indicadoronly_2">
+        <button class="indicadoronlyButton ind_accept" mode=""><i class="fa-solid fa-check button_icon_indicadoronly"></i></button>
+        <button class="indicadoronlyButton ind_reject"><i class="fa-solid fa-x button_icon_indicadoronly"></i></button>
+    </div>
+  </div>

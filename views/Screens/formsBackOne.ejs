@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body id="login_background">
+    <div class="CNI-sucess">
+      <h1 class="CNI_forms">CNI</h1>
+    </div>
+    <main>
+      <form id="forms_screen" action="/interview" method="post">
+        <h1 class="forms_title"><%=texto%></h1> 
+        <input type="submit" class="all_button forms_button formsbackone" value="Retornar">
+        <input type="hidden" name="task" value=<%=task%>>
+        <input type="hidden" name="dp" value=<%=dp%>>
+        <input type="hidden" name="dir" value=<%=dir%>>
+        <input type="hidden" name="dtr" value=<%=dtr%>>
+        <input type="hidden" name="Status" value=<%=Status%>>
+        <input type="hidden" name="name_oper" value=<%=name_oper%>>
+        <input type="hidden" name="IDTAREFA" value=<%=IDTAREFA%>>
+        <input type="hidden" name="IDOPER" value=<%=IDOPER%>>
+        <input type="hidden" name="IDSCH" value=<%=IDSCH%>>
+      </form> 
+    </main>
+  </body>
+</html>

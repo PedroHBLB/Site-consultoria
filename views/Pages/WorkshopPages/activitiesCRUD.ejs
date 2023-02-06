@@ -1,0 +1,49 @@
+<form action="" class="form_activite" method="post">
+    <div class="row_container">
+        <div class="column_container column_size_mediun">
+            <label class="label_1">Sequencia</label>
+            <input type="text" class="workshop_activities_input num" name="SEQUENCIA" required></input>
+        </div>
+        <div class="column_container column_size_big">
+            <label class="label_1">Descrição</label>
+            <input type="text" class="workshop_activities_input" name="DESCRICAO" required></input>
+        </div>
+    </div>
+    <div class="row_container">
+        
+        <div class="column_container column_size_mediun">
+            <label class="label_1">
+                Essa atividade pode incluir novos registros?</label>
+            <diV>
+              <input type="radio" name="INCLUIREGISTRO" value=1 required/>
+              <label>Sim</label>
+            </diV>
+            <diV>
+              <input type="radio" name="INCLUIREGISTRO" value=0 required/>
+              <label>Não</label>
+            </diV>
+        </div>
+        <div class="column_container column_size_mediun">
+            <label class="label_1">
+                Essa atividade é individual ou em grupo?</label>
+            <diV>
+              <input type="radio" name="INDIVIDGRUPO" value=0 required/>
+              <label>Individual</label>
+            </diV>
+            <diV>
+              <input type="radio" name="INDIVIDGRUPO" value=1 required/>
+              <label>Grupo</label>
+            </diV>
+        </div>
+    </div>
+    <div class="row_container">
+        <div class="column_container column_size_big">
+            <label class="label_1">Tool Tip</label>
+            <input type="text" class="workshop_activities_input" name="TOOLTIP"></input>
+        </div>
+        <input type="hidden" name="IDOPER"></input>
+        <input type="hidden" name="IDTAREFA"></input>
+        <input type="hidden" name="ID"></input>
+    </div>
+    <%- include("../../Templates/ACR/acr_3")%>
+</form>

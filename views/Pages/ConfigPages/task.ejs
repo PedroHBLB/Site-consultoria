@@ -1,0 +1,32 @@
+<button class="all_button config_object_button" num=-1>Tarefa</button>
+<div class="config_object_continer">
+  <div class="button_scrollbar_container">
+      <%for(var i = 0;i<tasks.length; i++){%>
+        <div class="molde_button_config">
+          <button class="all_button scroll_button task_button_config">
+            <p class="button_text step"><%=tasks[i][0]%></p>
+            <hr class="button_middle_line" />
+            <p class="button_text obj"><%=tasks[i][1]%></p>
+            <p class="ghost atributes_oper"><%=tasks[i][0]%>;<%=tasks[i][1]%>;<%=tasks[i][2]%>;<%=tasks[i][3]%>;<%=tasks[i][4]%></p>
+          </button>
+        </div>
+        <%}%>
+  </div>
+
+  <hr class="button_middle_line" />
+
+  <div class="row_config">
+    <div class="column_config">
+      <label class="config_label_up">Passo</label>
+      <label class="config_label_down config_size_row_step_sequence task_label"></label>
+    </div>
+    <div class="column_config">
+      <label class="config_label_up">Objetivos de Negócio</label>
+      <label class="config_label_down task_label" id="config_size_row_objectives"></label>
+    </div>
+    <div class="column_config">
+      <label class="config_label_up">Sequência</label>
+      <label class="config_label_down config_size_row_step_sequence task_label"></label>
+    </div>
+  </div>
+</div>

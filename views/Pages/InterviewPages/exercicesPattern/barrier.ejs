@@ -1,0 +1,40 @@
+<div class="barrier_container size_content">
+  <div class="barrier_top_container">
+    <div class="barrier_crud" num="-1" indicador="" numindicador="" resposta>
+      <div class="barrier_crud_sub_container">
+        <button class="all_button crud_barrier_bsc_button barrir_type_plus">
+          <i class="fa-solid fa-plus crud_icon"></i>
+        </button>
+        <button class="all_button crud_barrier_bsc_button barrir_type_edit">
+          <i class="fa-solid fa-pencil crud_icon"></i>
+        </button>
+        <button class="all_button crud_barrier_bsc_button barrir_type_delete">
+          <i class="fa-solid fa-trash crud_icon"></i>
+        </button>
+      </div>
+    </div>
+    <div class="select_container barrier_bsc_select_size">
+      <select class="barrier_bsc_select barrier_select">
+        
+      </select>
+      <span class="square square_blue square_curves"></span>
+    </div>
+    <div></div>
+  </div>
+  <div class="barrier_bsc_button_container">
+    <%for(var m = 0; m < respind.length;m++){%> 
+      <%if(idPD == respind[m].IDPADRAOENTREVISTA && g == respind[m].GRUPO && IDrespen[g] == respind[m].IDRESPENTREVISTA){%> 
+        <%let resposta = respind[m].OBJETIVO+";"+respind[m].META+";"+respind[m].REAL+";"+respind[m].OBJ+";"+respind[m].BARREIRA+";"+respind[m].EFEITOBARREIRA+";"+respind[m].SEVERIDADE+";"+respind[m].CAUSA+";"+respind[m].OCORRENCIA+";"+respind[m].CONTROLES+";"+respind[m].DETECCAO+";"+respind[m].INDICADOR+";"+respind[m].NUMINDICADOR+";"+respind[m].IDRESPENTREVISTA%>
+    <button class="barrier_ind_button respBarrier" resposta="" numindicador=<%=respind[m].NUMINDICADOR%> indicador=<%=respind[m].INDICADOR%> idrespen=<%=respind[m].IDRESPENTREVISTA%> >
+      <div class="column_barrier">
+        <label class="barrier_ind_label"><%=respind[m].INDICADOR%></label>
+      </div>
+      <div class="column_barrier">
+        <label class="barrier_ind_label"><%=respind[m].BARREIRA%></label>
+      </div>
+      <p class="ghost"><%=resposta%></p>
+    </button>
+    <%}%> 
+    <%}%>
+  </div>
+</div>

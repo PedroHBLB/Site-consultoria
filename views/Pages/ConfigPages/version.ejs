@@ -1,0 +1,30 @@
+<button class="all_button config_object_button" num=-1>Versão</button>
+<div class="config_object_continer">
+    <div class="button_scrollbar_container">
+        <%for(var i = 0;i<versions.length; i++){%>
+            <button class="all_button scroll_button version_button">
+                <p class="button_text historic"><%=versions[i][0]%></p>
+                <hr class="button_middle_line" />
+                <p class="button_text date"><%=versions[i][1]%> </p>
+                <p class="ghost atributos_version"><%=versions[i][0]%>;<%=versions[i][1]%>;<%=versions[i][2]%>;<%=versions[i][3]%></p>
+            </button>
+        <%}%>
+    </div>
+
+    <hr class="button_middle_line" />
+    
+    <div class="row_config">
+        <div class="column_config">
+            <label class="config_label_up">Historico</label>
+            <label class="config_label_down version_label" id="config_size_row_number"></label>
+        </div>
+        <div class="column_config">
+            <label class="config_label_up">Data</label>
+            <label class="config_label_down config_size_row_date_status version_label"></label>
+        </div>
+        <div class="column_config">
+            <label class="config_label_up">Status</label>
+            <label class="config_label_down config_size_row_date_status version_label"></label>
+        </div>
+    </div>
+</div>

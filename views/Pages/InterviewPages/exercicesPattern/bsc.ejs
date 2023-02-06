@@ -1,0 +1,78 @@
+<div class="bsc_container size_content">
+  <div class="bsc_top_container">
+    <div class="bsc_crud" num="-1" perspectiva="" numperspectiva="" resposta="">
+      <div class="bsc_crud_sub_container">
+        <button class="all_button crud_barrier_bsc_button bsc_type_plus">
+          <i class="fa-solid fa-plus crud_icon"></i>
+        </button>
+        <button class="all_button crud_barrier_bsc_button bsc_type_edit">
+          <i class="fa-solid fa-pencil crud_icon"></i>
+        </button>
+        <button class="all_button crud_barrier_bsc_button bsc_type_delete">
+          <i class="fa-solid fa-trash crud_icon"></i>
+        </button>
+      </div>
+    </div>
+    <div class="select_container barrier_bsc_select_size">
+      <select class="barrier_bsc_select bsc_select_change">
+        <option>Financeiro</option>
+        <option>Cliente</option>
+        <option>Processos Internos</option>
+        <option>Aprendizado e Inovação</option>
+      </select>
+      <span class="square square_blue square_curves"></span>
+    </div>
+    <div></div>
+  </div>
+  <div class="barrier_bsc_button_container"></div>
+</div>
+
+<div class="bsconly_container size_content" bsctipo="" numperspectiva="">
+  <div class="row_bsconly">
+    <div class="column_exercice">
+      <label>Meta</label>
+      <input type="text" class="input_indicadoronly" />
+    </div>
+    <div class="column_exercice">
+      <label>Real</label>
+      <input type="text" class="input_indicadoronly" />
+    </div>
+  </div>
+  <div class="row_bsconly">
+    <div class="column_exercice column_size_big column_select_center">
+      <label>Indicador</label>
+      <div class="select_container select_bsc_size">
+        <select class="exercice_bsc_Select">
+          <%for(var l =0; l < itensCombo.length; l++){%>
+            <%if(itensCombo[l][0] != "Não Aplica" && itensCombo[l][0] != "Forma de Processo" && itensCombo[l][0] != "Tipo de Processo"){%>
+              <%if(itensCombo[l][0] == "Perspectiva Financeira BSC"){%>
+                <option tipo="Financeiro"><%=itensCombo[l][1]%></option>
+              <%}%>
+              <%if(itensCombo[l][0] == "Perspectiva Cliente BSC"){%>
+                <option style="display: none;" tipo="Cliente"><%=itensCombo[l][1]%></option>
+              <%}%>
+              <%if(itensCombo[l][0] == "Perspectiva Processos Internos BSC"){%>
+                <option style="display: none;" tipo="Processos Internos"><%=itensCombo[l][1]%></option>
+              <%}%>
+              <%if(itensCombo[l][0] == "Perspectiva Aprendizado e Inovação BSC"){%>
+                <option style="display: none;" tipo="Aprendizado e Inovação"><%=itensCombo[l][1]%></option>
+              <%}%>
+            <%}%>
+          <%}%>
+        </select>
+        <span class="square square_blue"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row_bsconly">
+    <textarea class="bsc_textarea"></textarea>
+  </div>
+  <div class="row_indicadoronly_2">
+    <button class="indicadoronlyButton ind_accept" mode="">
+      <i class="fa-solid fa-check button_icon_indicadoronly"></i>
+    </button>
+    <button class="indicadoronlyButton ind_reject">
+      <i class="fa-solid fa-x button_icon_indicadoronly"></i>
+    </button>
+  </div>
+</div>

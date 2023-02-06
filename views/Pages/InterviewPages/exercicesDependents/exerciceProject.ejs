@@ -1,0 +1,262 @@
+<%for(var p = 0; p < projetos.length; p++){%>
+    <div class="task_container">
+        <button class="all_button ativs_button" Taskdoor="close"><%=projetos[p].NOME%></button>
+
+        <div class="entrevista_container">
+            <button class="all_button entrevista_button" Entrevistadoor="close">Config</button>
+            <div class="entrevista_content" tipoentrada ="14.5" grupo=0>     
+                <div class="save_content" flagrupo='false'>
+                    <div></div>
+                    <button class="save_button save_project_button" tipo="config" projectID=<%=projetos[p].ID%>><i class="fa-solid fa-floppy-disk button_text_pass"></i></button>
+                </div>
+                <div>
+                    <div class="project_config_container">
+                        <label class="projetos_label">Nome do Projeto:</label>
+                        <%let nome = projetos[p].NOME.replaceAll(" ","!")%>
+                        <input class="projetos_input project_input_rulles" type="text" value=<%=nome%>>
+                        <br>
+                        <hr class="projetos_config_hr">
+                        <br>
+                        <input type="checkbox" name="delProject">
+                        <label>DELETAR</label>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="entrevista_container">
+            <button class="all_button entrevista_button" Entrevistadoor="close">Descrição</button>
+            <div class="entrevista_content" tipoentrada ="14.5" grupo=0>     
+                <div class="save_content" flagrupo='false'>
+                    <div></div>
+                    <button class="save_button save_project_button" tipo="descricao" projectID=<%=projetos[p].ID%>><i class="fa-solid fa-floppy-disk button_text_pass"></i></button>
+                </div>
+                <div>
+                    <div class="projeto_sub_container">
+                        <div class="projetos_box"></div>
+                        <div class="pre_projetos_box">
+                            <textarea class="projetos_textarea"><%=projetos[p].DESCRICAO%></textarea>
+                            <div class="projetos_button_container">
+                                <button class="projeto_edit_button"><i class="fa-solid fa-pencil crud_icon"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="entrevista_container">
+            <button class="all_button entrevista_button" Entrevistadoor="close">Objetivo</button>
+            <div class="entrevista_content" tipoentrada ="14.5" grupo=0>     
+                <div class="save_content" flagrupo='false'>
+                    <div></div>
+                    <button class="save_button save_project_button" tipo="objetivo" projectID=<%=projetos[p].ID%>><i class="fa-solid fa-floppy-disk button_text_pass"></i></button>
+                </div>
+                <div>
+                    <div class="projeto_sub_container">
+                        <div class="projetos_box"></div>
+                        <div class="pre_projetos_box">
+                            <textarea class="projetos_textarea"><%=projetos[p].OBJETIVO%></textarea>
+                            <div class="projetos_button_container">
+                                <button class="projeto_edit_button"><i class="fa-solid fa-pencil crud_icon"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="entrevista_container">
+            <button class="all_button entrevista_button" Entrevistadoor="close">Estado Atual</button>
+            <div class="entrevista_content" tipoentrada ="14.5" grupo=0>     
+                <div class="save_content" flagrupo='false'>
+                    <div></div>
+                    <button class="save_button save_project_button" tipo="estadoatual" projectID=<%=projetos[p].ID%>><i class="fa-solid fa-floppy-disk button_text_pass"></i></button>
+                </div>
+                <div>
+                    <div class="projeto_sub_container">
+                        <div class="projetos_box"></div>
+                        <div class="pre_projetos_box">
+                            <textarea class="projetos_textarea"><%=projetos[p].ESTADOATUAL%></textarea>
+                            <div class="projetos_button_container">
+                                <button class="projeto_edit_button"><i class="fa-solid fa-pencil crud_icon"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="entrevista_container">
+            <button class="all_button entrevista_button" Entrevistadoor="close">Estado Desejado</button>
+            <div class="entrevista_content" tipoentrada ="14.5" grupo=0>     
+                <div class="save_content" flagrupo='false'>
+                    <div></div>
+                    <button class="save_button save_project_button" tipo="estadometa" projectID=<%=projetos[p].ID%>><i class="fa-solid fa-floppy-disk button_text_pass"></i></button>
+                </div>
+                <div>
+                    <div class="projeto_sub_container">
+                        <div class="projetos_box"></div>
+                        <div class="pre_projetos_box">
+                            <textarea class="projetos_textarea"><%=projetos[p].ESTADOMETA%></textarea>
+                            <div class="projetos_button_container">
+                                <button class="projeto_edit_button"><i class="fa-solid fa-pencil crud_icon"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="entrevista_container">
+            <button class="all_button entrevista_button" Entrevistadoor="close">Analise</button>
+            <div class="entrevista_content" tipoentrada ="14.5" grupo=0>     
+                <div class="save_content" flagrupo='false'>
+                    <div></div>
+                    <button class="save_button save_project_button" tipo="analise" projectID=<%=projetos[p].ID%>><i class="fa-solid fa-floppy-disk button_text_pass"></i></button>
+                    <p class="ghost"></p>
+                    <div class="entrevista_respostas ghost"></div>
+                </div>
+                <div class="project_analise_container">
+                    <div class="row_projects">
+                        <div class="column_project">
+                            <%if(projetos[p].PESSOAS == 1){%>
+                                <input class="analise_checked" modo="pessoas" type="checkbox" name="analise1" checked>
+                            <%}else{%>
+                                <input class="analise_checked" modo="pessoas" type="checkbox" name="analise1">
+                            <%}%>
+                            <label>MÃO DE OBRA</label>
+                        </div>
+                        <div class="column_project">
+                            <%if(projetos[p].EQUIPAMENTOS == 1){%>
+                                <input class="analise_checked" modo="equipamentos" type="checkbox" name="analise2" checked>
+                            <%}else{%>
+                                <input class="analise_checked" modo="equipamentos" type="checkbox" name="analise2">
+                            <%}%>
+                            <label>MATERIAL</label>
+                        </div>
+                        <div class="column_project">
+                            <%if(projetos[p].PROCESSO == 1){%>
+                                <input class="analise_checked" modo="processo" type="checkbox" name="analise3" checked>
+                            <%}else{%>
+                                <input class="analise_checked" modo="processo" type="checkbox" name="analise3">
+                            <%}%>
+                            <label>MÉTODO</label>
+                        </div>
+                    </div>
+                    <div class="row_projects">
+                        <div class="column_project">
+                            <%if(projetos[p].MONITORAMENTO == 1){%>
+                                <input class="analise_checked" modo="monitoramento" type="checkbox" name="analise4" checked>
+                            <%}else{%>
+                                <input class="analise_checked" modo="monitoramento" type="checkbox" name="analise4">
+                            <%}%>
+                            <label>MEDIÇÃO</label>
+                        </div>
+                        <div class="column_project">
+                            <%if(projetos[p].TECNOLOGIA == 1){%>
+                                <input class="analise_checked" modo="tecnologia" type="checkbox" name="analise5" checked>
+                            <%}else{%>
+                                <input class="analise_checked" modo="tecnologia" type="checkbox" name="analise5">
+                            <%}%>
+                            <label>MÁQUINA</label>
+                        </div>
+                        <div class="column_project">
+                            <%if(projetos[p].INDUSTRIA == 1){%>
+                                <input class="analise_checked" modo="industria" type="checkbox" name="analise6" checked>
+                            <%}else{%>
+                                <input class="analise_checked" modo="industria" type="checkbox" name="analise6">
+                            <%}%>
+                            <label>MEIO AMBIENTE</label>
+                        </div>
+                    </div>
+                    <div class="row_projects">
+                        <div class="select_container size_analise select_analise">
+                            <select class="config_select" name="textanalise" required>
+                                <option visivel="true" modo="pessoas">MÃO DE OBRA</option>
+                                <option visivel="true" modo="equipamentos">MATERIAL</option>
+                                <option visivel="true" modo="processo">MÉTODO</option>
+                                <option visivel="true" modo="monitoramento">MEDIÇÃO</option>
+                                <option visivel="true" modo="tecnologia">MÁQUINA</option>
+                                <option visivel="true" modo="industria">MEIO AMBIENTE</option>
+                                <option visivel="true" modo="vazio"></option>
+                            </select>
+                            <span class="square square_blue"></span>
+                        </div>
+                        <% let ListaPessoas = projetos[p].TEXTPESSOAS.split(";")%>
+                        <% let ListaEquipamentos = projetos[p].TEXTEQUIPAMENTOS.split(";")%>
+                        <% let ListaProcesso = projetos[p].TEXTPROCESSO.split(";")%>
+                        <% let ListaMonitoramento = projetos[p].TEXTMONITORAMENTO.split(";")%>
+                        <% let ListaTecnologia = projetos[p].TEXTTECNOLOGIA.split(";")%>
+                        <% let ListaIndustria =projetos[p].TEXTINDUSTRIA.split(";")%>
+                        <div class="analise_block" visivel="false" modo="pessoas">
+                            <%for(var i=0; i < ListaPessoas.length; i++){%>
+                                <%if(ListaPessoas[i] != ""){%>                                
+                                    <div class="analise_button">
+                                        <textarea class="divAnalise"><%=ListaPessoas[i]%></textarea>
+                                        <button class="analise_button_remove">X</button>
+                                    </div>
+                                <%}%>
+                            <%}%> 
+                        </div>
+                        <div class="analise_block" visivel="false" modo="equipamentos">
+                            <%for(var i=0; i < ListaEquipamentos.length; i++){%>
+                                <%if(ListaEquipamentos[i] != ""){%>                                
+                                    <div class="analise_button">
+                                        <textarea class="divAnalise"><%=ListaEquipamentos[i]%></textarea>
+                                        <button class="analise_button_remove">X</button>
+                                    </div>
+                                <%}%>
+                            <%}%>
+                        </div>
+                        <div class="analise_block" visivel="false" modo="processo">
+                            <%for(var i=0; i < ListaProcesso.length; i++){%>
+                                <%if(ListaProcesso[i] != ""){%>                                
+                                    <div class="analise_button">
+                                        <textarea class="divAnalise"><%=ListaProcesso[i]%></textarea>
+                                        <button class="analise_button_remove">X</button>
+                                    </div>
+                                <%}%>
+                            <%}%>
+                        </div>
+                        <div class="analise_block" visivel="false" modo="monitoramento">
+                            <%for(var i=0; i < ListaMonitoramento.length; i++){%>
+                                <%if(ListaPessoas[i] != ""){%>                                
+                                    <div class="analise_button">
+                                        <textarea class="divAnalise"><%=ListaMonitoramento[i]%></textarea>
+                                        <button class="analise_button_remove">X</button>
+                                    </div>
+                                <%}%>
+                            <%}%>
+                        </div>
+                        <div class="analise_block" visivel="false" modo="tecnologia">
+                            <%for(var i=0; i < ListaTecnologia.length; i++){%>
+                                <%if(ListaPessoas[i] != ""){%>                                
+                                    <div class="analise_button">
+                                        <textarea class="divAnalise"><%=ListaTecnologia[i]%></textarea>
+                                        <button class="analise_button_remove">X</button>
+                                    </div>
+                                <%}%>
+                            <%}%>
+                        </div>
+                        <div class="analise_block" visivel="false" modo="industria">
+                            <%for(var i=0; i < ListaIndustria.length; i++){%>
+                                <%if(ListaPessoas[i] != ""){%>                                
+                                    <div class="analise_button">
+                                        <textarea class="divAnalise"><%=ListaIndustria[i]%></textarea>
+                                        <button class="analise_button_remove">X</button>
+                                    </div>
+                                <%}%>
+                            <%}%>
+                        </div>
+                        <div class="analise_plus_container">
+                            <input type="text" name="analiseNovo" class="analise_input">
+                            <button class="analise_plus_button"><i class="fa-solid fa-plus button_analise_plus crud_icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+    </div>
+<%}%>

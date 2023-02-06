@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body id="login_background">
+    <div class="CNI-sucess">
+      <h1 class="CNI_forms">CNI</h1>
+    </div>
+    <main>
+      <%let get = page.split(",")%>
+      <form action=<%=get[0]%> method="get" id="forms_screen">
+        <h1 class="forms_title"><%=texto%></h1> 
+        <input type="hidden" name='client_id' value=<%=get[1]%>>
+        <button class="all_button forms_button">Retornar</button>
+      </form> 
+    </main>
+  </body>
+  <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+</html>

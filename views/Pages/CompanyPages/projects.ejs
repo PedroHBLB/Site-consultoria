@@ -1,0 +1,71 @@
+<div id="page_project">
+        <%if(projects.length > 0){%>
+            <%if(projects.length > 1){%>
+                <button class="project_pass_button projetos_button_left"><i class="fa-solid fa-chevron-left crud_icon button_project_pass_icon"></i></button>
+            <%}else{%>
+                <div class="project_pass_fake_button"></div>
+            <%}%>
+            <%for(var p = 0; p < projects.length; p++){%>
+                <div class="project_container">
+                    <div class="project_title_container">
+                        <div class="project_tilte_h1">
+                            <h1 class="project_title"><%=projects[p].NOME%></h1>
+                        </div>
+                        <div class="project_title_button_container">
+                            <div>
+                                <button class="project_button" tipo="Descrição">Descrição</button>
+                            </div>
+                            <div>
+                                <button class="project_button" tipo="Objetivo">Objetivo</button>
+                            </div>
+                            <div>
+                                <button class="project_button" tipo="Estado Atual">Estado Atual</button>
+                            </div>
+                            <div>
+                                <button class="project_button" tipo="Estado Desejado">Estado Desejado</button>
+                            </div>
+                            <div>
+                                <button class="project_button" tipo="Peixe">Espinha de Peixe</button>
+                                <span class="ghost"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project_screen_total">
+                        <div class="project_screen" tipo="Descrição">
+                            <div class="project_screen_text">
+                                <p><%=projects[p].DESCRICAO%></p>
+                            </div>
+                        </div>
+                        <div class="project_screen" tipo="Objetivo">
+                            <div class="project_screen_text">
+                                <p><%=projects[p].OBJETIVO%></p>
+                            </div>
+                        </div>
+                        <div class="project_screen" tipo="Estado Atual">
+                            <div class="project_screen_text">
+                                <p><%=projects[p].ESTADOATUAL%></p>
+                            </div>
+                        </div>
+                        <div class="project_screen" tipo="Estado Desejado">
+                            <div class="project_screen_text">
+                                <p><%=projects[p].ESTADOMETA%></p>
+                            </div>
+                        </div>
+                        <div class="project_screen" tipo="Peixe">
+                            <span class="ghost project_attributes"><%=projects[p].PESSOAS%>;<%=projects[p].EQUIPAMENTOS%>;<%=projects[p].PROCESSO%>;<%=projects[p].MONITORAMENTO%>;<%=projects[p].TECNOLOGIA%>;<%=projects[p].INDUSTRIA%></span>
+                            <span class="ghost project_attributes_text"><%=projects[p].TEXTPESSOAS%>?<%=projects[p].TEXTEQUIPAMENTOS%>?<%=projects[p].TEXTPROCESSO%>?<%=projects[p].TEXTMONITORAMENTO%>?<%=projects[p].TEXTTECNOLOGIA%>?<%=projects[p].TEXTINDUSTRIA%></span>
+                            <canvas class="project_canvas">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            <%}%>
+            <%if(projects.length > 1){%>    
+                <button class="project_pass_button projetos_button_rigth"><i class="fa-solid fa-chevron-right crud_icon button_project_pass_icon"></i></button>
+            <%}else{%>
+                <div class="project_pass_fake_button"></div>
+            <%}%>
+        <%}else{%>
+            <p class="project_none">SEM PROJETOS CRIADOS</p>
+        <%}%>
+</div>

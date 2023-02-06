@@ -1,0 +1,24 @@
+<div class="combo_container size_content">
+  <% let combo = 0%> 
+  <%for(var l = 0; l < allFonte.length; l++){%>
+    <%if(allFonte[l][1] == entrevistas[e].COMBOSOURCE){%> 
+      <% combo = allFonte[l][0] %> 
+    <%}%> 
+  <%}%>
+  <div class="combo_select_container">
+    <div class="select_container">
+      <select class="exercice_Select" num="0">
+        <%for(var l = 0; l < itensCombo.length; l++){%> 
+          <%if(itensCombo[l][0] === combo){%>
+            <option><%=itensCombo[l][1]%></option>
+          <%}%> 
+        <%}%> 
+        <%for(var l = 0; l < itensCombo.length; l++){%>
+          <option class="ghost"><%=l%> Itens%></option>
+        <%}%>
+      </select>
+      <span class="square square_blue"></span>
+    </div>
+  </div>
+  <div class="combo_buttons_container"></div>
+</div>

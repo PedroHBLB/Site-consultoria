@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Task</title>
+    <script
+      src="https://kit.fontawesome.com/2904941b8d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <%- include ("../Templates/LeftSide/leftside_3", { flagExercice, data,  status }) %>
+      <div class="right_side">
+        <%- include ("../Pages/InterviewPages/exercices", {atividades, entrevistas, itensEscalas, itensCombo, allFonte, respen, respind, status, projetos, descricao, objetivo,estadoatual,estadometa}) %> 
+        <%- include ("../Pages/InterviewPages/files", {schedule, empresa, documents, resend}) %> 
+        <%- include ("../Pages/InterviewPages/annotation", {schedule, anotacoes, resend}) %>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="../js/Change/PageTask.js"></script>
+
+  <script type="module" src="../js/InterviewFunction/Rulles/Respostas.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/forbiddenCrud.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/functionLeftSide.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/Radios.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/Review.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/changeButton.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/Temas.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/nameProjects.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/analiseProject.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/analiseRemoveButton.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/tooltipButtonProject.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/numPoint.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/selectBarrier.js"></script>
+  <script type="module" src="../js/InterviewFunction/Rulles/firstSliderText.js"></script>
+
+  <script type="module" src="../js/InterviewFunction/ButtonTask/ButtonActiv.js"></script>
+  <script type="module" src="../js/InterviewFunction/ButtonTask/ButtonEntrevista.js"></script>
+
+  <script type="module" src="../js/InterviewFunction/FileInteraction/crudPlusFile.js"></script>
+  <script type="module" src="../js/InterviewFunction/FileInteraction/acrCancel.js"></script>
+  <script type="module" src="../js/InterviewFunction/FileInteraction/fileChange.js"></script>
+  <script type="module" src="../js/InterviewFunction/FileInteraction/buttonFile.js"></script>
+  <script type="module" src="../js/InterviewFunction/FileInteraction/buttonFileHover.js"></script>
+
+  <script type="module" src="../js/InterviewFunction/AnotInteraction/textareaChange.js"></script>
+  <script type="module" src="../js/InterviewFunction/AnotInteraction/crudPlusAnot.js"></script>
+  <script type="module" src="../js/InterviewFunction/AnotInteraction/crudEditAnot.js"></script>
+  <script type="module" src="../js/InterviewFunction/AnotInteraction/crudDeleteAnot.js"></script>
+  <script type="module" src="../js/InterviewFunction/AnotInteraction/acrCancel.js"></script>
+
+  <script type="module" src="../js/AllPages/functionControlPerfil.js"></script>
+  <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Slider/sliderChange.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Itens/comboSelect.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Indicadores/addIndicador.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Group/changeButton.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Temas/changeButtonTema.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Projectts/editCreateProject.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Projectts/addremoveAnalise.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Projectts/changeAnalise.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Projectts/plusAnalise.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Projectts/tooltipProject.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/BarrierIndicadoresCRUD/ButtonIndicadores.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/BarrierIndicadoresCRUD/CrudPlusIndicador.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/BarrierIndicadoresCRUD/CrudEditIndicador.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/BarrierIndicadoresCRUD/CrudDeleteIndicador.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/BarrierIndicadoresCRUD/CrudAccept.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/BarrierIndicadoresCRUD/CrudReject.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/ButtonBscCRUD/CrudPlusBSC.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/ButtonBscCRUD/CrudEditBSC.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/ButtonBscCRUD/CrudDeleteBSC.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/ButtonBscCRUD/changeSelectBCS.js"></script>
+  <script type="module" src="../js/InterviewFunction/ExercicesFunction/Save/saveContent.js"></script>
+
+  <script type="module" src="../js/InterviewFunction/ButtonSend/sendResponses.js"></script>
+</html>

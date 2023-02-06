@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Clientes</title>
+    <script
+      src="https://kit.fontawesome.com/2904941b8d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <span class="ghost company"><%=company%></span>
+    <span class="ghost units"><%=units%></span>
+    <span class="ghost contatcs"><%=contatcs%></span>
+    <span class="ghost schedules"><%=schedules%></span>
+    <span class="ghost papel"><%=permission%></span>
+    <span class="ghost idclient"><%=empresaClient%></span>
+    <div class="container">
+      <%- include ("../Templates/LeftSide/leftside_4",{company: empresaClient})  %>
+      <div class="right_side" mode="client">
+        <%- include ("../Templates/RightSide/Headers/header_2")  %>
+        <%- include ("../Templates/RightSide/Navegations/navegation_2",  {abas: ["Dados Básicos", "Unidades", "Contatos", "Agenda"]})  %>
+        <%- include ("../Templates/RightSide/CRUDs/crud_1")  %>
+        <main class="page_content">
+          <%- include ("../Pages/ClientPages/details", { selectRob, selectSetor, selectConsultoria})  %>
+          <%- include ("../Pages/ClientPages/units", {} )%>
+          <%- include ("../Pages/ClientPages/contacts", { selectUnidade, selectArea, selectLingua })  %>
+          <%- include ("../Pages/ClientPages/schedule", { selectOper, selectTask })%>
+        </main>
+      </div>
+    </div>
+  </body>
+
+  <script type="module" src="../js/Change/PageClient.js"></script>
+
+  <script type="module" src="../js/ClientFunction/StartPages/StartClient.js"></script>
+  <script type="module" src="../js/ClientFunction/StartPages/StartUnits.js"></script>
+  <script type="module" src="../js/ClientFunction/StartPages/StartContacts.js"></script>
+  <script type="module" src="../js/ClientFunction/StartPages/StartSchedule.js"></script>
+
+  <script type="module" src="../js/ConCliFunction/Interaction/ButtonCrudPlus.js"></script>
+  <script type="module" src="../js/ConCliFunction/Interaction/ButtonCrudEdit.js"></script>
+  <script type="module" src="../js/ConCliFunction/Interaction/ButtonCrudDelete.js"></script>
+  <script type="module" src="../js/ConCliFunction/Interaction/ButtonAcrCancel.js"></script>
+  
+  <script type="module" src="../js/ClientFunction/Interaction/ButtonAcrReset.js"></script>
+  <script type="module" src="../js/ClientFunction/Interaction/changeSelect.js"></script>
+  
+  <script type="module" src="../js/ClientFunction/Rulles/PermissionsCrud.js"></script>
+  <script type="module" src="../js/ClientFunction/Rulles/Masks.js"></script>
+  <script type="module" src="../js/ClientFunction/Rulles/Zero.js"></script> 
+
+  <script type="module" src="../js/AllPages/functionControlPerfil.js"></script>
+  <script src="../js/AllPages/functionControlTabs.js"></script>
+  <script type="module" src="../js/AllPages/functionRoutes.js"></script>
+
+</html>

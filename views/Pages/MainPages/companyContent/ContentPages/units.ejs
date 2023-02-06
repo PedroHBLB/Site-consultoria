@@ -1,0 +1,65 @@
+<div class="main_content_page">
+  <div class="main_scrollbar_button_container">
+    <%for(var i = 0;i<units.length; i++){%>
+      <%if(units[i][9] == companys[num][1]){ %>
+        <div class="model_button">
+          <button class="all_button scroll_button first_units_button">
+              <i class="fa-solid fa-building sc button_icon"></i>
+            <hr class="button_middle_line">
+            <p class="button_text"><%=units[i][0]%></p>
+            <p class="ghost unitsInfo"><%=units[i][0]%>;<%=units[i][1]%>;<%=units[i][2]%>;<%=units[i][3]%>;<%=units[i][4]%>;<%=units[i][5]%>;<%=units[i][6]%>;<%=units[i][7]%>;<%=units[i][8]%></p>
+          </button>
+        </div>
+      <% } %>
+    <%}%>
+  </div>
+  
+    <form class="main_data">
+      <div class="row_container">
+          <div class="column_container column_size_mediun">
+            <label class="label_2">Nome da Unidade</label>
+            <label type="text" class="input_2"></label>
+          </div>
+          <div class="column_container column_size_mediun">
+            <label class="label_2">Endereço Comercial</label>
+            <label type="text" class="input_2"></label>
+          </div>
+          <div class="column_container column_size_small">
+            <label class="label_2">Número</label>
+            <label type="text" class="input_2"></label>
+          </div>
+        </div>
+      
+        <div class="row_container">
+          <div class="column_container column_size_mediun">
+            <label class="label_2">Bairro</label>
+            <label type="text" class="input_2"></label>
+          </div>
+          <div class="column_container column_size_mediun">
+            <label class="label_2">Complemento</label>
+            <label type="text" class="input_2"></label>
+          </div>
+          <div class="column_container column_size_small">
+            <label class="label_2">CEP</label>
+            <label type="text" class="input_2"></label>
+          </div>
+        </div>
+      
+        <div class="row_container">
+          <div class="column_container column_size_big">
+            <label class="label_2">Município</label>
+            <label type="text" class="input_2"></label>
+          </div>
+          <div class="column_container column_size_small">
+            <label class="label_2">Estado</label>
+            <label type="text" class="input_2"></label>
+          </div>
+          <div class="column_container column_size_mediun">
+            <label class="label_2">Pais</label>
+            <label type="text" class="input_2"></label>
+          </div>
+        </div>
+    </form>
+  
+  </div>
+  

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body id="login_background">
+    <div id="login_screen">
+      <form id="login_form" method="post" action="/main">
+        <h1 class="CNI">CNI</h1>
+        <h2 id="login_title">Login de Usuário</h2>
+        <div class="login_element">
+          <input class="login_input" type="text" name="email" placeholder="Usuário"/>
+        </div>
+        <div class="login_element">
+          <input class="login_input" type="password" name="password" placeholder="Senha"/>
+        </div>
+        <div class="login_response">
+          <input class="login_response_button" type="submit" value="Entrar" />
+        </div>
+        <label class="login_try"><%=chances%></label>
+      </form>
+    </div>
+  </body>
+</html>

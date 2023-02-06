@@ -1,0 +1,36 @@
+<form id="oper_crud" class="config_crud_sub_container" method="post">
+    <div class="row_config">
+        <div class="column_config column_size_big_config">
+            <label class="config_label_up ">Descrição</label>
+            <input type="text" class="config_input"  name="DESCRICAO" required></input>
+        </div>
+        <div class="column_config column_size_medium_config">
+            <label class="config_label_up">Detalhe</label>
+            <input type="text" class="config_input"  name="DETALHE" required></input>
+        </div>
+    </div>
+    <div class="row_config">
+        <div class="column_config column_size_medium_config">
+            <label class="config_label_up">Tool Tip</label>
+            <input type="text" class="config_input"  name="TOOLTIP"></input>
+        </div>
+        <div class="column_config column_size_medall_config">
+            <label class="config_label_up">Icone</label>
+            <div class="select_container">
+                <select class="config_select oper_select" name="ICONE" required>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </select>
+                <span class="square square_blue"></span>
+                <img id="config_img" src="Operational/kick.png"/>
+            </div>
+        </div>
+        <input type="hidden" class="ghost oper_id" name="IDOPER"></input>
+    </div>
+    <%- include("../../Templates/ACR/acr_3")%>
+</form>
